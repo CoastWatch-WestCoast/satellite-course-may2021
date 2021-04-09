@@ -1,12 +1,3 @@
---- 
-title: "NOAA CoastWatch Satellite Course"
-author: "Cara Wilson, Jennifer Sevadjian, and  Dale Robinson"
-date: "8 March 2020"
-description: 'A compilation of R exercises used in the NOAA Satellite Course. '
-github-repo: CoastWatch-WestCoast
-url: http\://coastwatch.pfeg.noaa.gov/
----
-
 # Preface
 
 The [NOAA CoastWatch program](https://coastwatch.noaa.gov/cw/index.html) organizes online and in person satellite course every year, following the model developed in 2006 by Cara Wilson and Dave Foley from [CoastWatch West Coast](https://coastwatch.pfeg.noaa.gov/courses/satellite_course.html). The goal of the course is to familiarize NOAA/university researchers and students with different types of ocean satellite data, different tools, and teach participants how to use satellite data in their own research using their choice of software (e.g. R, python, ArcGIS). The course is a mix of lectures, tutorials and hands-on computer work on individual projects. All course materials were developed and adapted over the years by:
