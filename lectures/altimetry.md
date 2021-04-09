@@ -4,7 +4,11 @@
 ![Sea Surface Anomaly](../images/sla_globe.png)
 
 </center>
+<p align="center">
 
+<img src="../images/sla_globe.png">
+
+</p>
 This lecture is also available as part of an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/05-Salinity-Winds-Altimetry.pptx).
 
 ## What is altimetry? <a id="what-is-altimetry"></a>
