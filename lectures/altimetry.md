@@ -1,8 +1,9 @@
 # Altimetry
+<center>
 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz8vETWUDNW8v-cuXEV%2F-Lz9Eca4BR_9xxxhQkpo%2Fimage.png?alt=media&token=f55347f0-0737-418d-ac77-2a6df1253376)
+![Sea Surface Anomaly](../images/sla_globe.png)
 
-NASA – 1992-2014
+</center>
 
 This lecture is also available as part of an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/05-Salinity-Winds-Altimetry.pptx).
 
