@@ -1,8 +1,8 @@
 # Altimetry
-<p align="center">
-<img src="../images/sla_globe.png">
-<p align="center">NOAA August 2020</p>
-</p>
+
+![](../.gitbook/assets/sla_globe.png)
+
+NOAA August 2020
 
 This lecture is also available as part of an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/05-Salinity-Winds-Altimetry.pptx).
 
@@ -16,7 +16,7 @@ Satelllite altimeters measure the ocean surface height in relation to the mean s
 
 ![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz8vETWUDNW8v-cuXEV%2F-Lz9FGq4aboLFaogm02k%2Fimage.png?alt=media&token=c87132b4-c131-48a7-92ad-909a19a63c8e)
 
-https://www.star.nesdis.noaa.gov/socd/lsa/AltBathy/
+[https://www.star.nesdis.noaa.gov/socd/lsa/AltBathy/](https://www.star.nesdis.noaa.gov/socd/lsa/AltBathy/)
 
 Satellite altimeters are **active microwave** instruments \(-&gt; not affected by cloud cover\)
 
@@ -26,7 +26,7 @@ The return time of the signal gives a measure of distance to the surface \(**ran
 
 However, as electromagnetic waves travel through the atmosphere \(twice\), they can be decelerated by water vapor or ionization.
 
- -&gt; need atmospheric correction for accurate measurements
+-&gt; need atmospheric correction for accurate measurements
 
 The precise position of the satellite is tracked using Doppler shift, GPS or lasers, to determine the **satellite altitude,** which is the distance to a standard reference \(**ellipsoid**\).
 
@@ -38,14 +38,12 @@ Altimetry data has an accuracy of ~ 3cm !! But a low resolution \(~ 25 km\), and
 
 The sea surface height \(SSH\), is the satellite’s distance at a given instant from the reference surface, so:
 
- SSH = Altitude – Range.
+SSH = Altitude – Range.
 
 For the ocean, the sea surface height integrates effects such as:
 
- - The sea surface height which would exist without any perturbing factors \(wind, currents, tides, etc.\). This surface, known as the geoid, is determined by gravity variations around the world, which are in turn due to major mass and density differences on the seafloor.
-
- - The ocean circulation, or dynamic topography, which comprises:
-
+* The sea surface height which would exist without any perturbing factors \(wind, currents, tides, etc.\). This surface, known as the geoid, is determined by gravity variations around the world, which are in turn due to major mass and density differences on the seafloor.
+* The ocean circulation, or dynamic topography, which comprises:
 * the permanent stationary component \(permanent circulation linked to Earth’s rotation, permanent winds, etc.\). The mean effect is of the order of one meter.
 * a highly variable component \(due to wind, eddies, seasonal variations, etc.\).
 
@@ -65,7 +63,7 @@ MSS represents the mean profile of the SSH over a defined temporal period, also 
 
 ![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz8vETWUDNW8v-cuXEV%2F-Lz9GhPmiA144sagqftT%2Fimage.png?alt=media&token=4c6f50ff-e671-414d-b349-094b99554539)
 
-https://duacs.cls.fr/faq/what-are-the-product-specification/altimeter-reference-period-and-absolute-reference/
+[https://duacs.cls.fr/faq/what-are-the-product-specification/altimeter-reference-period-and-absolute-reference/](https://duacs.cls.fr/faq/what-are-the-product-specification/altimeter-reference-period-and-absolute-reference/)
 
 ## Geostrophic currents <a id="geostrophic-currents"></a>
 
@@ -75,7 +73,7 @@ SLA obtained from satellite altimetry measurements is used to derive surface geo
 
 ![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz9GlyeuT-QJ8yZ79Kv%2F-Lz9H4udKtmGGtUAETfT%2Fimage.png?alt=media&token=00391bee-45f8-4a29-bab1-3d12e538073b)
 
-http://www.seos-project.eu/modules/oceancurrents/oceancurrents-c06-s02-p01.html
+[http://www.seos-project.eu/modules/oceancurrents/oceancurrents-c06-s02-p01.html](http://www.seos-project.eu/modules/oceancurrents/oceancurrents-c06-s02-p01.html)
 
 ## Geostrophic currents & SLA <a id="geostrophic-currents-and-sla"></a>
 
@@ -120,8 +118,7 @@ Much of the ocean surface is interpolated: low spatial resolution ~ 25km, 7 days
 ## Data products <a id="data-products"></a>
 
 * AVISO data. Distributed by CMEMS \(Europe\). Free for research purposes but need to register to get access. [http://marine.copernicus.eu/services-portfolio/access-to-products](http://marine.copernicus.eu/services-portfolio/access-to-products/)​[/](http://marine.copernicus.eu/services-portfolio/access-to-products/)
-* 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz9GlyeuT-QJ8yZ79Kv%2F-Lz9IjQal50T5MWp3l0E%2Fimage.png?alt=media&token=dfa18b69-5a75-45fe-b5c6-45711b879cb3)
+* ![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz9GlyeuT-QJ8yZ79Kv%2F-Lz9IjQal50T5MWp3l0E%2Fimage.png?alt=media&token=dfa18b69-5a75-45fe-b5c6-45711b879cb3)
 
 From: Eric Leuliette, NOAA/NESDIS
 

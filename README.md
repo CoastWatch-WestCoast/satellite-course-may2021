@@ -1,6 +1,6 @@
 # Preface
 
-The [NOAA CoastWatch program](https://coastwatch.noaa.gov/cw/index.html) organizes a 3-day satellite course in various locations \(and now online as well\) every year, following the model developed in 2006 by Cara Wilson and Dave Foley from [CoastWatch West Coast](https://coastwatch.pfeg.noaa.gov/courses/satellite_course.html).
+The [NOAA CoastWatch program](https://coastwatch.noaa.gov/cw/index.html) organizes online and in person satellite course every year, following the model developed in 2006 by Cara Wilson and Dave Foley from [CoastWatch West Coast](https://coastwatch.pfeg.noaa.gov/courses/satellite_course.html).
 
 **The goal of the course is to familiarize NOAA/university researchers and students with different types of ocean satellite data, different tools, and teach participants how to use satellite data in their own research using their choice of software \(R, python, ArcGIS\).**
 
