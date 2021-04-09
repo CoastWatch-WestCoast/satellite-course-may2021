@@ -1,8 +1,6 @@
 # Altimetry
 
-![](../.gitbook/assets/sla_globe.png)
-
-NOAA August 2020
+![NOAA Sea Level Anomaly August 2020](../.gitbook/assets/sla_globe.png)
 
 This lecture is also available as part of an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/05-Salinity-Winds-Altimetry.pptx).
 

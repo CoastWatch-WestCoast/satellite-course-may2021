@@ -1,3 +1,7 @@
+---
+description: An overview of the NOAA CoastWatch Satellite Course
+---
+
 # Introduction
 
 ## The NOAA CoastWatch/OceanWatch/PolarWatch program <a id="the-noaa-coastwatch-oceanwatch-polarwatch-program"></a>

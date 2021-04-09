@@ -1,8 +1,6 @@
 # Ocean Color
 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz8l8Wmbn_y8XZi6oct%2F-Lz8lY0_YXgjWZHXFbOP%2Fimage.png?alt=media&token=6fc6b9d6-fcdb-4d46-9ceb-f13ec8b59ca4)
-
-NASA - SeaWiFS
+![VIIRS SNNP Sensor September 2020](../.gitbook/assets/chl_globe.png)
 
 This lecture is also available as an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/03-Ocean_Color.pptx).
 

@@ -1,8 +1,6 @@
 # Sea Surface Salinity
 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz9lqKyJ1tWMzErZQQJ%2F-Lz9lxlIRkf-ODGaqAXO%2Fimage.png?alt=media&token=54dffa7e-64e5-446e-8e03-3180485a644f)
-
-SMOS, 2010, from: http://www.salinityremotesensing.ifremer.fr/
+![SMOS, 2010, from: http://www.salinityremotesensing.ifremer.fr/](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz9lqKyJ1tWMzErZQQJ%2F-Lz9lxlIRkf-ODGaqAXO%2Fimage.png?alt=media&token=54dffa7e-64e5-446e-8e03-3180485a644f)
 
 This lecture is also available as part of an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/05-Salinity-Winds-Altimetry.pptx).
 

@@ -1,8 +1,6 @@
 # Ocean Surface Winds
 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lz9IqY8KU5G9VeCCE5w%2F-Lz9JE4jMHF9-mjE3sU8%2Fimage.png?alt=media&token=f3aabd7b-8f62-4743-babd-92bc1e3282ac)
-
-QuikSCAT, 01/03/2004
+![ASCAT METOP B Sensor April 2021](../.gitbook/assets/wind_global.png)
 
 This lecture is also available as part of an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/05-Salinity-Winds-Altimetry.pptx).
 

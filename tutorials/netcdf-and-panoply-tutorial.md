@@ -1,34 +1,38 @@
 # NetCDF and Panoply tutorial
 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lyprc_XB5v6r_eamv1a%2F-LypsIbYyTLPsuZL6jDI%2Fimage.png?alt=media&token=4c744af2-e6c8-4e88-ad25-796aacefda88)
-
-From Xkcd.com
-
-​
-
 ## NetCDF <a id="netcdf"></a>
 
-N**etCDF \(Network Common Data Form\)** is a file format for storing multidimensional scientific data \(variables\) such as temperature, salinity, chlorophyll concentration, wind speed, ...
-
-Many organizations and scientific groups in different countries have adopted netCDF as a standard way to represent some forms of scientific data.
+N**etCDF \(Network Common Data Form\)** is a file format for storing multidimensional scientific data \(variables\), including satellite observations of variable we wll use in the course such as sea surface temperature, salinity, chlorophyll concentration, and wind speed. Many organizations and scientific groups in different countries have adopted netCDF as a standard way to represent some forms of scientific data.
 
 The NetCDF format has many advantages, the most important of which is that it is **self-describing**, meaning that software packages can directly read the data and determine its structure, the variable names and essential metadata such as the units. This self-describing aspect of the netCDF file format means that the information needed to ensure accurate work \(reduce the incidence of errors\) is available within the data itself \(no need for additional files\). Secondly, it means that different analysis software, like Matlab, R, Python or ArcGIS \(among many others\), have utilities to read and work with NetCDF files. Thirdly, plotting software \(e.g. Ferret, **Panoply**, ncview\) can directly read the netCDF files for visualization.
 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lyprc_XB5v6r_eamv1a%2F-Lypsf-OmSQj9WY7jNON%2Fimage.png?alt=media&token=02f0491b-8f37-4aba-b9d3-8df8c34e019e)
+![Example of metadata and data within a NetDCF file](../.gitbook/assets/netcdf_structure.png)
 
-Example of embedded metadata within a NetDCF file
-
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lyprc_XB5v6r_eamv1a%2F-LypsjMWuSwGfQfOgp4r%2Fimage.png?alt=media&token=292ad8b2-3190-4f79-b49a-f9c7f578c301)
-
-Example structure of a NetCDF file containing temperature and precipitation data across a region for 8 time steps
+![Example structure of a NetCDF file containing SST and Sea Ice over 8 time steps](../.gitbook/assets/netcdf.png)
 
 ## NASA Panoply <a id="nasa-panoply"></a>
 
-NASA developed a viewer that allows users to create images of NetCDF files. Panoply is available for download at: [https://www.giss.nasa.gov/tools/panoply/](https://www.giss.nasa.gov/tools/panoply/) and can be run on Windows, Mac and Linux computers. In Windows, you do not need to install it, just download it and double-click on the Panoply.exe file. It can take a while to launch, be patient.
+NASA developed the Panoply viewer that allows users to view and visualize data held in NetCDF files. Some feature is the software include:
+
+* Visualize data from netCDF and HDF files
+* View the metadata
+* View the data
+* Display the data in many different map projections
+* Download visualization as images
+* Create animations
+* Freeware
+
+![Panoply visualization, data, and Metadata interfaces ](../.gitbook/assets/panoply_3.png)
+
+Panoply is available for download at: [https://www.giss.nasa.gov/tools/panoply/](https://www.giss.nasa.gov/tools/panoply/) and can be run on Windows, Mac and Linux computers. 
+
+A set of "how to" instructions can be found to the following URL   
+[https://www.giss.nasa.gov/tools/panoply/help/](https://www.giss.nasa.gov/tools/panoply/help/)  
+Below are a few examples to try out to get you used to visualizing data with the Panoply Viewer.
 
 ## Example \#1. Make a map of global chlorophyll a concentration <a id="example-1-make-a-map-of-global-chlorophyll-a-concentration"></a>
 
-* * Launch Panoply.
+* Launch Panoply.
 * When Panoply opens, it prompts you to open a file. Open the file you just downloaded.
 
 ![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-Lyprc_XB5v6r_eamv1a%2F-Lypvs3duaaux6nHW45b%2Fimage.png?alt=media&token=9f331343-9a50-4465-950e-a435a741c96c)

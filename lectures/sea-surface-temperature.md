@@ -1,8 +1,6 @@
 # Sea Surface Temperature
 
-![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-LyqApkpwQohv7AQ7K8z%2F-LyqCUutyCO64Poh4Zld%2Fimage.png?alt=media&token=b72678ef-8da0-4ae3-9c62-5a0d32d9299a)
-
-NASA – MODIS Terra, May 2001
+![NOAA GeoPolar Blended SST April 2021](../.gitbook/assets/sst_globe.png)
 
 This lecture is also available as an audio-narrated [PowerPoint presentation](https://oceanwatch.pifsc.noaa.gov/files/hawaii2020/04-Sea_Surface_Temperature.pptx).
 
