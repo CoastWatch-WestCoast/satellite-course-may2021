@@ -10,9 +10,7 @@ The [NOAA CoastWatch program](https://coastwatch.noaa.gov/cw/index.html) organiz
 
 NOAA CoastWatch/OceanWatch/PolarWatch provides easy access for everyone to global and regional satellite data products for use in understanding, managing and protecting ocean and coastal resources, and for assessing impacts of environmental change in ecosystems, weather, and climate.
 
-![](https://github.com/CoastWatch-WestCoast/satellite-course-may2021/tree/585c42de9757fee4f55eaecb989f7f296dd9742d/images/cw_logo_80.png) [CoastWatch](https://coastwatch.noaa.gov/)
-
-![](.gitbook/assets/cw_logo_80.png)
+![CoastWatch](.gitbook/assets/cw_logo_80.png)
 
 ## Course Development
 
