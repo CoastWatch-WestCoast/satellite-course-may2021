@@ -5,7 +5,7 @@
 Establish the following baseline vocabulary and concepts:
 
 * Satellite vs sensor 
-  * Active vs passive sensor
+* Active vs passive sensor
 * Electromagnetic radiation
 * Geophysical variable/product
 * Atmospheric windows
@@ -13,20 +13,23 @@ Establish the following baseline vocabulary and concepts:
 * Polar vs geostationary orbit
 * Spatial, temporal resolution, swath width
 * Wavelength band/channel
-* Data levels
+* Data levels \(L1, L2, L3, L4\)
 * Temporal composites vs cloud cover
 * Near-Real Time vs. Science Quality
 
 ## Advantages of satellite remote sensing <a id="advantages-of-satellite-remote-sensing"></a>
 
-* Provides information where surface-based measurements are not available and augments existing measurements
-* Provides global/near-global coverage with consistent observations
+There are many potential advantages for using satellite remote products, including:
+
+* They provide measurements where surface-based measurements are not available,
+* They augment existing measurements, and
+* They provide global/near-global coverage.
 
 ## Satellite vs Sensor <a id="satellite-vs-sensor"></a>
 
 **Satellite**: A space-borne platform
 
-**Satellite**: a space-borne platform holding one or more
+**Sensor**: a space-borne platform holding one or more
 
 * Some satellites are single-mission, carrying only one sensor:  e.g. the GeoEye/OrbImage satellite carries only the SeaWiFS sensor 
 * Other satellites have multiple sensors on them:  e.g. MODIS is one of 6 sensors on the Aqua satellite. The Terra satellite also carries a MODIS sensor.
@@ -150,7 +153,10 @@ The sensor sees field of view or footprint on the Earth's surface. Ideally, we w
 
 **Ray 6** - the energy from the sea surface but from outside the field of view
 
-Atmospheric corrections are applied to the signal received by the sensor to account for the loss of signal that was emitted with the footprint \(Rays 1 and 3\) and the introduction of stray electromagnetic radiation not originating from the sea within the footprint \(Rays 4, 5 and 6\). 
+**Atmospheric corrections are applied to the signal received by the sensor to account for**   
+
+* the loss of signal that was emitted with the footprint \(Rays 1 and 3\) and
+* the introduction of stray electromagnetic radiation not originating from the sea within the footprint \(Rays 4, 5 and 6\).
 
 Even at “window” wavelengths, atmospheric correction of the satellite data is necessary to derive accurate satellite data products.
 
