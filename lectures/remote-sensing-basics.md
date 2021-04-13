@@ -2,7 +2,7 @@
 
 ## Objectives <a id="objectives"></a>
 
-Establish the following baseline vocabulary and concepts:
+Upon completion of this module, you will be familiar with the following vocabulary and concepts:
 
 * Satellite vs sensor 
 * Active vs passive sensor
@@ -36,13 +36,13 @@ There are many potential advantages for using satellite remote products, includi
 
 ![Location of sensors on the Aqua satellite. The location of MODIS is shaded in blue.](../.gitbook/assets/modis_confi_mod.png)
 
-## What is measured by the sensors? <a id="what-is-measured-by-the-sensors"></a>
+## What is measured by satellite sensors? <a id="what-is-measured-by-the-sensors"></a>
 
-Sensors can NOT directly measure populations of most fish, whales, turtles, monk seals, etc.
+Satellite sensors cannot directly measure populations of most fish, whales, turtles, monk seals, etc.
 
 ![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-LylUMJAPuozsXxfVu-l%2F-LylUY1OGxh-KEtWgJJ7%2Fimage.png?alt=media&token=e73dd161-671f-4993-ac9a-deb21c9dd2a8)
 
-Satellite data can provide information about oceanic parameters that influence marine resources: SST, Currents, Wind, Ocean color, Salinity
+Instead, satellite data can provide information about oceanic parameters that influence marine resources: SST, Currents, Wind, Ocean color, Salinity
 
 ![](https://gblobscdn.gitbook.com/assets%2F-LylLNCSXaUER_FiqDSx%2F-LylUMJAPuozsXxfVu-l%2F-LylUjR22Ka5vJMd_x9B%2Fimage.png?alt=media&token=d4057429-692b-4717-ab6a-b7edaac528ab)
 

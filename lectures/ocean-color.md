@@ -6,9 +6,9 @@ This lecture is also available as an audio-narrated [PowerPoint presentation](ht
 
 ## Objectives <a id="objectives"></a>
 
-Establish baseline vocabulary/concepts:
+Upon completion of this module, you will be familiar with the following vocabulary and concepts:
 
-* How is ocean color measured from space
+* How ocean color is measured from space
 * Spectral characteristics of oceanic waters
 * Sensor bands
 * True color images
