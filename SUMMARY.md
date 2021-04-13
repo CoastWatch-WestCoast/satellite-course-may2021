@@ -9,7 +9,7 @@
   * [Altimetry](lectures/altimetry.md)
   * [Ocean Surface Winds](lectures/ocean-surface-winds.md)
   * [Sea Surface Salinity](lectures/sea-surface-salinity.md)
-  * [What Dataset to Choose?](lectures/what-dataset-to-choose.md)
+  * [How to choose the best datasets for your projects](lectures/what-dataset-to-choose.md)
   * [Applications of Satellite Data](lectures/applications-of-satellite-data.md)
 * [Tutorials](tutorials/README.md)
   * [ERDDAP](tutorials/erddap/README.md)
