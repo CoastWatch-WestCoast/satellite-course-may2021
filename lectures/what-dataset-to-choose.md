@@ -32,7 +32,7 @@ The temporal coverage for three different ocean color sensors are pictured below
 
 Alternatively, you could use one of the blended datasets, where data from many ocean color missions have been merged for you. One example is the European Space Agency’s Climate Change Initiative Ocean color dataset \(ESA CCI Blended\). The dataset merges data from the SeaWiFS, MERIS, MODIS-Aqua, and VIIRS missions to create a blended dataset extending from 1997 to the present.
 
-![](../.gitbook/assets/ds_timline.png)
+![Timeline of when data is available from three ocean color sensors](../.gitbook/assets/ds_timline.png)
 
 ## Does the dataset cover your area of interest?
 
@@ -68,7 +68,7 @@ Temporal resolution helps you address the question of how often you need a measu
 
 On the left is the coverage for the ASCAT polar orbiting sensor for 3 successive days. ASCAT is an active microwave sensor in a polar orbit with a 500 m swath width. For the location west of Mexico indicated by the white dot on the figure below, you would get a wind measurement every 3 days.
 
-![](../.gitbook/assets/ds_revisit.png)
+![Daily spacial coverage maps for ASCAT and NOAA Blended Winds datasets ](../.gitbook/assets/ds_revisit.png)
 
 If you require data more often, you would need to select a different dataset. For example, the Cross-Calibrated Multi-Platform \(CCMP\) dataset blends data from many data sources, including active and passive sensors, to make a global dataset with measurements as often as every 6 hours. The maps on the right \(above\) show daily wind maps from the CCMP dataset that provide a measurement each day of the 3-day period at the location indicated by the white dot.
 
@@ -80,17 +80,17 @@ The figure below shows how cloud cover may impact datasets where science quality
 
 However, it turns out that clouds can have more subtle impacts on the ocean color signal, which can degrade the quality of pixels near the pixels blocked by clouds in the near real-time processing. The less rigorous quality control that is applied to near real-time data can miss identification of these degraded pixels. Now look at the image on the left, which was made from science quality data.  The inset zooms in on the same cloudy area. You can see that the data gaps are larger. The science quality data were delayed by about 2 weeks to allow time for more rigorous quality control. The additional degraded pixels were identified and removed from the dataset during this quality control process, resulting in the larger data gaps.  
 
-![](../.gitbook/assets/ds_latency1.png)
+![Science quality and near real-time chlorophyll maps from the same VIIRS source data.](../.gitbook/assets/ds_latency1.png)
 
 ### Case Study for use of near real-time and science quality
 
 The next few slides help illustrate how both science quality and near real-time data make important contributions to ocean management and research. If a group is developing a model to predict the distribution of harmful algal blooms, they might develop a habitat model that uses environmental data like chlorophyll concentration to define conditions under which harmful algal blooms had formed in the past. They would want the best quality data available to create the model. In other words, they would use the science quality data. Since this would be a retrospective analysis, the two-week delay for science quality data would not impact model development. 
 
-![](../.gitbook/assets/ds_latency2.png)
+![Schematic for producing a habitat model with science quality data](../.gitbook/assets/ds_latency2.png)
 
 On the other hand, when using the model to predict the distribution of harmful algal blooms a few days into the future, the group couldn’t use science quality data that is two-weeks old. Doing so would reduce forecasting ability. Instead, they would use the most up-to-date data available, the near real-time data. The group would need to accept the potential increased error in order to obtain the data quickly for prediction purposes. 
 
-![](../.gitbook/assets/ds_latency3%20%281%29.png)
+![Schematic for producing a habitat model output with near real-time data](../.gitbook/assets/ds_latency3%20%281%29.png)
 
 ## Missing data: How much can your project tolerate?
 
@@ -98,7 +98,7 @@ There can be many reasons for missing data, but for this example let’s conside
 
 Location 2 is close to the cost, in a region where the ocean microwave signal is masked out because it is contaminated by the microwave signal coming off of the land. Even though infrared data is likely to be periodically missing because it is blocked by cloudy conditions, you would need to opt for the infrared dataset \(assuming that these two datasets are your only options\)
 
-![](../.gitbook/assets/ds_misssingdata.png)
+![Hypothetical locations of two study sites on infrared and microwave-base SST maps](../.gitbook/assets/ds_misssingdata.png)
 
 ## Case Study: Managing missing data from clouds
 
@@ -110,17 +110,28 @@ This case study takes a closer look at strategies for overcoming data gaps due t
 
 One strategy to reduce data gaps is to take the average values over several days. For example, for a 3-day composite data in each pixel contains a value that is an average of the day of interest, plus the day before and the data after. As more days are added to the averages \(see figure below\), data gaps are reduced. However, the data are more smoothed over more days. Notice how the finer structure visible within the circle in the 3-day image is less distinct in the weekly and monthly images.
 
-![](../.gitbook/assets/ds_casestudy_ir%20%281%29.png)
+![Progressive gap filling by temporal averaging](../.gitbook/assets/ds_casestudy_ir%20%281%29.png)
 
 ### Switch to microwave imagery
 
 Microwave imagery can see through clouds, so daily microwave images will often reduce data gaps. A potential drawback is that spatial resolution can be less. Spatial resolution from microwave sensors is about 25 km, compared to infrared imagery with spatial resolutions typically from 7.40m to 4 km. In addition, microwave imagery has data masked out within approximately 50 km of shore. 
 
-![](../.gitbook/assets/ds_case_mw.png)
+![Reducing gaps by switching to microwave data](../.gitbook/assets/ds_case_mw.png)
 
 ### **Switch to geostationary imagery**
 
 Sensors on geostationary satellites look at the same location on earth and capture an image every 30-60 minutes. The idea is that clouds will move around during the course of a day, increasing the chance of capture data for each pixel when it is cloud-free. Using daily geostationary imagery will often reduce data gaps, but spatial resolution can be less. Sensors on polar-orbiting infrared satellites can have sub-kilometer spatial resolution, whereas resolutions from infrared sensors on geostationary satellites typically range from 2-4 kilometers.
 
-![](../.gitbook/assets/ds_case_gs.png)
+![Reducing gaps by switching to geostationary data](../.gitbook/assets/ds_case_gs.png)
+
+### Blended products – best of all worlds?
+
+Another strategy might be to select a blended data product for your project. Blended products merge sensor data from multiple sources in order to increase spatial coverage. In addition, an interpolation step is often included to fill in any remaining data gap. 
+
+Two examples of blended products are included on the figure below. On the left is the Multi-Scale Ultra High Resolution, or MUR, SST dataset, which merges data from polar-orbiting infrared and microwave imagery.  On the right is the NOAA GeoPolar Blended SST dataset that is produced and distributed by NOAA. The GeoPolar Blended dataset merges data from polar-orbiting and geostationary sensors. The two datasets use different interpolation methods.  
+****
+
+![](../.gitbook/assets/ds_blended.png)
+
+This strategy might seem like the perfect solution, but one consideration is that with blended products, you generally don’t know which pixels come from which satellite observations and which pixels are interpolated. The circled region on the upper three maps \(see figure above\) is an area where there are gaps in the source data used for the blended product. Now look closely at that area on the maps made from the two blended datasets toward the bottom of the slide.  The results look different in that area. Which of the two datasets more accurately represent the environment? The answer to that question will likely vary with project location and over time. If knowing the level of accuracy is important for your project, then doing some sort of comparison to non-interpolated datasets would be an important step for you to consider. 
 
