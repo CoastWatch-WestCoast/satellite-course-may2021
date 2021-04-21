@@ -1,7 +1,5 @@
 # Tabular Datasets, BGC-Argo data
 
-> notebook filename \| 07-Tabledap.Rmd
-
 There are two types of data in ERDDAP, gridded data and tabular data. So far all of our examples have been with gridded data. Working with tabular data is a little different. Here we will explore the Biogeochemical-Argo \(BGC-Argo\) dataset, which is hosted on the PolarWatch ERDDAP.
 
 ##  Searching for the BGC-Argo datasets
@@ -13,9 +11,11 @@ In the search results, two datasets are displayed: the near-real-time dataset \(
 
 SOCCOM search result
 
+![SOCCOM search results](../../.gitbook/assets/bgcdatalisting.png)
+
 We will work with the near-real time dataset, so click `"graph"` to the left of the near real-time dataset.
 
-BGC Graph result
+![BGC Make-A-Graph page](../../.gitbook/assets/bgcmap1.png)
 
 By default the map displays all the float locations for the last 10 days. The locations are color coded by their Nitrate concentration.
 
@@ -31,7 +31,7 @@ The `“Make A Graph”` page works slightly differently for the tabular dataset
 * This dataset has `"Region"` as a parameter, and we can use that to get just data from Antarctic. Select `"region"` as a constraint and select `"Antarctica"` from the dropdown widget menu 
 * Next click the `"Redraw the Graph"` button.
 
-Recent Floats in Antarctica
+![Recent Floats in Antarctica](../../.gitbook/assets/bgcmap15.png)
 
 ##  Adjusting the map display
 
@@ -41,7 +41,7 @@ The scale for the pCO2 goes from 0-2000 uatm, but the data on the map seems to b
 * Below `"Color Bar"`, type `300` in the `"Minimum"` box and `500` in the `"Maximum"` box. 
 * Next click the `"Redraw the Graph"` button.
 
-Recent Floats in Antarctica
+![Recent Floats in Antarctica](../../.gitbook/assets/bgcmap2.png)
 
 ##  Navigating around the map
 
@@ -50,7 +50,7 @@ Now lets zoom in on the region around Australia.
 * Select longitude as a constraint and `100` as `"Optional Constraint #1"`. Make sure that the dropdown item to the left of `"Optional Constraint #1"` is set to `">="`. Set `180` as `"Optional Constraint #2`. Make sure that the dropdown item to the left of `"Optional Constraint #2"` is set to `"<="`.
 * Click the `"Redraw the Graph"` button.
 
-Recent Floats near Australia
+![Recent Floats near Australia](../../.gitbook/assets/bgcmap3.png)
 
 ##  Subsetting the Data
 
@@ -64,7 +64,7 @@ This brings us to a new page which shows all the variables in the dataset, and a
 * Check the boxes next to `"depth"` and add &lt;=10 as an as `"Optional Constraint"` for depth to limit the number of results per profile.
 * Click the `"Sumbit"` button at the bottom of the page.
 
-Listing of Floats near Australia
+![Listing of Floats near Australia](../../.gitbook/assets/floatlisting.png)
 
 ##  Visualize the buoy track
 
@@ -78,7 +78,7 @@ Listing of Floats near Australia
 
 The map shows the pCO2 values along the entire buoy track.
 
-Float Trajectory showing pCO2
+![Float Trajectory showing pCO2](../../.gitbook/assets/bgcmap45.png)
 
 **We can also pot the use the `"Color"` widget to plot the time for each of the symbols on the map.**
 
@@ -86,7 +86,7 @@ Float Trajectory showing pCO2
 * Remove the minimum \(300\) and maximum \(500\) values from underneath the ‘“color bar”’ in ’“Graph Settings’”
 * Then click the `"Redraw the Graph"` button.
 
-Float Trajectory showing date
+![Float Trajectory showing date](../../.gitbook/assets/bgcmap4.png)
 
 The color bar is now time and color of marker indicate the date the the buoy of in a location.
 
@@ -97,7 +97,7 @@ The color bar is now time and color of marker indicate the date the the buoy of 
 * Under ‘“Graph Type’” at the top of the page select’“time”‘as the’“X Axis”‘,’“depth”‘as the’“Y Axis”‘and’“Nitrate”‘as the’“Color”’
 * Then click the `"Redraw the Graph"` button.
 
-Nitrate Section
+![Nitrate Section](../../.gitbook/assets/bgcsection1.png)
 
 **The data is upside-down and not much detail can be seen in the surface so lets fix those issues.**
 
@@ -105,5 +105,5 @@ Nitrate Section
 * Change the Marker Size to `"10"`
 * Under `"Color Bar"`, set `"Maximum"` to `15`.
 
-Nitrate Section, fixed up
+![A better version of the Nitrate Section](../../.gitbook/assets/bgcsection2.png)
 

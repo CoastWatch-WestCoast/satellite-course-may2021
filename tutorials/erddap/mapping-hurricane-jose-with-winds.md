@@ -1,6 +1,6 @@
 # Mapping Hurricane Jose with winds
 
-> notebook filename \| 06-Vectors.Rmd
+![Hurricane Jose Sept 19, 2017 off the US East Coast](../../.gitbook/assets/jose_rbg.png)
 
 Hurricane Jose formed on September 5, 2017 and, on September 8, it reached its peak intensity as a high-end Category 4 hurricane. Jose worked its way northward along the US East Coast, finally dissipating on September 25, 2017. In this exercise we will try to capture the hurricane event using wind data from the ASCAT instruments on board all EUMETSAT’s MetOp satellites. ASCAT is a microwave scatterometer designed to measure surface winds over the global ocean.
 
@@ -36,7 +36,7 @@ Several MUR datasets show up in the search results. In the ASCAT datasets, scala
 * Make sure that the `"color"` drop down menu has `"mod"` selected
 * Click `"Redraw the Graph"`
 
-Hurricane Jose wind speeds
+![Hurricane Jose wind speeds](../../.gitbook/assets/jose_speed.png)
 
 Jose was weakening at this time, but maximum wind speeds were greater that 22 m/s \(50 mph\). Note the eye of the hurricane in the center of the highest winds.
 
@@ -76,7 +76,7 @@ Note that the following on the `Make A Graph` page:
 * Change time widget to select Sept. 19 2017 \(2017-09-19T00:00:00Z\)
 * Click `"Redraw the Graph"`
 
-Hurricane Jose wind direction and speed on Sept. 19
+![Hurricane Maria wind direction and speed Sept. 26](../../.gitbook/assets/jose_vectors.png)
 
 The vector arrows show the wind direction. You can see the counter-clockwise movement of the hurricane winds. The length of the arrows indicates the wind speed. The legend shows the arrow length that equals 25 m/s.
 
@@ -84,9 +84,18 @@ The vector arrows show the wind direction. You can see the counter-clockwise mov
 
 Move the time ahead 2 days to Sept. 21, 2017 \(`2017-09-21T12:00:00Z`\) and redraw the graph \(map\). Hurricane Jose has moved to the northeast. Hurricane Jose has weakened. Note that the arrow length legend has changed to equals 15 m/s.
 
+![](../../.gitbook/assets/jose_vectors_plus2days.png)
+
 Hurricane Jose wind direction and speed Sept. 21
 
 Move the time ahead to Sept. 26, 2017 \(`2017-09-26T12:00:00Z`\) and redraw the graph \(map\). Hurricane Maria has moved into the southwest corner of the map.
 
-Hurricane Maria wind direction and speed Sept. 26
+![Hurricane Maria wind direction and speed Sept. 26](../../.gitbook/assets/maria_vectors.png)
+
+### Try this on your own
+
+Try to locate Hurricane Gert. Gert traveled up the US East Coast between August 12-17, 2017.  
+[https://en.wikipedia.org/wiki/2017\_Atlantic\_hurricane\_season\#Hurricane\_Gert](https://en.wikipedia.org/wiki/2017_Atlantic_hurricane_season#Hurricane_Gert)
+
+_Hint: Start looking at about 30N and 287.5E on August 15_
 
