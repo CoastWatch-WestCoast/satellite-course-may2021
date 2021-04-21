@@ -1,7 +1,6 @@
 # Chapter 7 Reprojecting satellite and buoy data
 
-> notebook filename \| 07\_projected\_maps\_buoys.Rmd  
->  history \| Created March 2020
+> notebook filename \| 07\_projected\_maps\_buoys.Rmd
 
 This exercise demonstrates collecting satellite and in-situ buoy data as ancillary data that complement the mission of a research cruise. We will download the cruise track, satellite, and buoy data from ERDDAP and then map all of the data in an Alaska Albers projection.
 

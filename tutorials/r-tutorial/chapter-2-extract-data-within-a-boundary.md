@@ -1,7 +1,6 @@
 # Chapter 2 Extract data within a boundary
 
-> notebook filename \| 02-sanctuary.Rmd  
->  history \| converted to R notebook from sanctuary.R
+> notebook filename \| 02-sanctuary.Rmd
 
 In this exercise, you will download data from within the boundaries of the Monterey Bay National Marine Sanctuary \(MBNMS\) and visualize the data in a map.
 

@@ -1,7 +1,6 @@
 # Chapter 6 TurtleWatch
 
-> notebook filename \| 07\_turtlewatch\_xtracto.Rmd  
->  history \| converted to R notebook from R\_Turtlewatch\_rXtracto.R
+> notebook filename \| 07\_turtlewatch\_xtracto.Rmd
 
 ##  Install required packages and load libraries
 
