@@ -10,9 +10,9 @@ The [NOAA CoastWatch program](https://coastwatch.noaa.gov/cw/index.html) organiz
 
 NOAA CoastWatch/OceanWatch/PolarWatch provides easy access for everyone to global and regional satellite data products for use in understanding, managing and protecting ocean and coastal resources, and for assessing impacts of environmental change in ecosystems, weather, and climate.
 
-![CoastWatch](.gitbook/assets/cw_logo_80.png)
-
 ## Course Development
+
+![](.gitbook/assets/cw_logo_80%20%281%29.png) [CoastWatch](https://coastwatch.noaa.gov/)
 
 * Cara Wilson, Dave Foley, Dale Robinson, Roy Mendelssohn - [CoastWatch West Coast](https://coastwatch.pfeg.noaa.gov/courses/satellite_course.html)  
 * Shelly Tomlinson, Ron Vogel - [CoastWatch East Coast](https://coastwatch.pfeg.noaa.gov/)
