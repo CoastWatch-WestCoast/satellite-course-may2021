@@ -1,4 +1,10 @@
+---
+description: Bringing ERDDAP data directly into your analysis software
+---
+
 # Automating ERDDAP requests
+
+## ERDDAP's RESTful URL data request
 
 Download requests to ERDDAP are completely defined within a URL, allowing:
 
@@ -6,7 +12,7 @@ Download requests to ERDDAP are completely defined within a URL, allowing:
 * bringing data directly into analysis tools, 
 * and the use ERDDAP as a back end to drive customized online interfaces.
 
-##  Deconstructing the URL
+## Deconstructing the URL
 
 The URL is composed of several parts that define the data request. Let’s try breaking the URL down into its component parts.
 
@@ -34,7 +40,7 @@ Try breaking the URL down into its component parts as described below.
 * Everything beginning with `&.draw` adjusts the look of the image
   * `&.draw=surface&.trim=2&.vars=longitude|latitude|analysed_sst&.colorBar=KT_thermal|||12|20|&.bgColor=0xffccccff`
 
-##  Adjust the area in the URL
+## Adjust the area in the URL
 
 **NOTE**: You could do the following on the ERDDAP “Data Access Form” page and have ERDDAP generate the modified URL, but we will do it by hand in the browser.
 
@@ -64,17 +70,15 @@ ERDDAP allows you to call the most recent image without knowing the date of the 
 
 In the browser, look through the URL and find the part that defines the time. Change the both values `"last"`.
 
-* Change this: \[\(2015-06-17T12:00:00Z\):\(2015-06-17T12:00:00Z\)\] 
+* Change this: \[\(2015-06-17T12:00:00Z\):\(2015-06-17T12:00:00Z\)\]
 * To this: \[\(last\):\(last\)\]
 * Hit return in the browser to see the new edited map.
 
-![WA coast, Most recent image](https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplUKMO_OSTIAv20.png?analysed_sst%5B%28last%29:%28last%29%5D%5B%2846.5%29:%2850.0%29%5D%5B%28-128.975%29:%28-121.975%29%5D&.draw=surface&.trim=2&.vars=longitude%7Clatitude%7Canalysed_sst&.colorBar=KT_thermal%7C%7C%7C12%7C20%7C&.bgColor=0xffccccff)
-
-WA coast, Most recent image
+![WA coast, Most recent image](../../.gitbook/assets/wa_last.png)
 
 The image that appears is most recent data. You can even due math while using `"last"`. For example, to get the image one week before the most recent image.
 
-* Change this: \[\(last\):\(last\)\] 
+* Change this: \[\(last\):\(last\)\]
 * To this: \[\(last-7\):\(last-7\)\]
 * Hit return in the browser to see the new edited map.
 
@@ -82,7 +86,7 @@ You may have to adjust the color bar minimum and maximum a little. If so, find t
 
 * colorBar=KT\_thermal\|\|\|12\|20\|
 
-The minimum is set to 12 and maximum is st to 20. Play around with the numbers until your image looks good.
+The minimum is set to 12 and maximum is set to 20. Play around with the numbers until your image looks good.
 
 ##  Changing the file type in the URL
 
@@ -91,12 +95,12 @@ So far we have been downloading PGN files in our URL requests to visualize the c
 
 To download the data, we need to change the file type section of the URL request. There are over 30 file types to choose from, but useful formats for data are MATLAB and netCDF formats. The URL representations for those file types are:
 
-* .nc - netCDF files 
+* .nc - netCDF files
 * .mat - Matlab files
 
 We will select a netCDF file.
 
-* In the browser, locate the `.png` in the URL and replace it with `.nc` 
+* In the browser, locate the `.png` in the URL and replace it with `.nc`
 * Hit return in the browser and the netCDF file will download onto your computer
 * View the netCDF file you just downloaded in Panoply
 
@@ -164,13 +168,21 @@ erddap_url
 ## [1] "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplUKMO_OSTIAv20.nc?analysed_sst[(2015-07-13T12:00:00Z):1:(2015-07-14T12:00:00Z)][(45):1:(52)][(-128):1:(-121)]"
 ```
 
+#### Download the netCDF file
+
+Use download.file to download the data, where:
+
+* "url" equals the ERDDAP url we defined above
+* "destfile" is name given to the downloaded file
+
 ```text
 # Download the data as a netCDF file
 download.file(url=erddap_url, destfile="myDataFile.nc", quiet=TRUE)
 ```
 
-**Bring the data into R**  
- Open the downloaded data file, load the SST data, and display some information about the SST variable.
+#### **Bring the data into R**
+
+Open the downloaded data file, load the SST data, and display some information about the SST variable.
 
 ```text
 # open the netCDF file
@@ -230,7 +242,7 @@ ncatt_get(nc, mydata_var)
 ## [1] -3.000006
 ```
 
-Plot a simple visualization of the SST data.
+#### Plot a simple visualization of the SST data.
 
 ```text
 # Get the data for the first time step
@@ -239,4 +251,6 @@ sst1 <- (sst[,,1])
 #image(sst1, col=matlab.like2(255)) blue2green2red
 image(sst1, col = rainbow(225))
 ```
+
+![](../../.gitbook/assets/erddap_r_plot.png)
 

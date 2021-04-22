@@ -1,15 +1,22 @@
-# Tabular Datasets, BGC-Argo data
+---
+description: >-
+  Use ERDDAP's tabledap datatype to work with tabular data like buoy
+  measurements
+---
+
+# Tabular Datasets with BGC-Argo data
+
+## ERDDAP data types
 
 There are two types of data in ERDDAP, gridded data and tabular data. So far all of our examples have been with gridded data. Working with tabular data is a little different. Here we will explore the Biogeochemical-Argo \(BGC-Argo\) dataset, which is hosted on the PolarWatch ERDDAP.
 
 ##  Searching for the BGC-Argo datasets
 
 * Enter the following URL into your browser to bring up the PolarWatch ERDDAP: `https://polarwatch.noaa.gov/erddap/`
+
 * In the search box type “Biogeochemical-Argo” and click the “Search’ button
 
 In the search results, two datasets are displayed: the near-real-time dataset \(Dataset ID: SOCCOM\_BGC\_Argo\), and a science quality dataset that is updated quarterly \(Dataset ID: BGC\_Argo\_Snapshot\_Archive\).
-
-SOCCOM search result
 
 ![SOCCOM search results](../../.gitbook/assets/bgcdatalisting.png)
 
@@ -41,7 +48,7 @@ The scale for the pCO2 goes from 0-2000 uatm, but the data on the map seems to b
 * Below `"Color Bar"`, type `300` in the `"Minimum"` box and `500` in the `"Maximum"` box. 
 * Next click the `"Redraw the Graph"` button.
 
-![Recent Floats in Antarctica](../../.gitbook/assets/bgcmap2.png)
+![Map with reset colorbar](../../.gitbook/assets/bgcmap2.png)
 
 ##  Navigating around the map
 
@@ -60,15 +67,15 @@ What floats are we seeing? We can find this out by looking at the data itself.
 
 This brings us to a new page which shows all the variables in the dataset, and allows constraints to be set on all of them. Constraints from the previous page have been retained.
 
-* Check the boxes next to `"WMO_ID"` and `"mbariID"` at the top of the list.
-* Check the boxes next to `"depth"` and add &lt;=10 as an as `"Optional Constraint"` for depth to limit the number of results per profile.
+* Check the boxes next to `"WMO_ID"` and `"mbariID"` at the top of the list. 
+* Check the boxes next to `"depth"` and add &lt;=10 as an as `"Optional Constraint"` for depth to limit the number of results per profile. 
 * Click the `"Sumbit"` button at the bottom of the page.
 
 ![Listing of Floats near Australia](../../.gitbook/assets/floatlisting.png)
 
 ##  Visualize the buoy track
 
-**Now lets make a map of the complete trajectory for one of these floats, color coded by time.**
+**Make a map of the complete trajectory for one of these floats, color coded by time.**
 
 * Use the browser back button to return to the `"Data Access Page"`
 * Click on the ‘“Make a graph”’ link under the dataset title
@@ -80,10 +87,11 @@ The map shows the pCO2 values along the entire buoy track.
 
 ![Float Trajectory showing pCO2](../../.gitbook/assets/bgcmap45.png)
 
-**We can also pot the use the `"Color"` widget to plot the time for each of the symbols on the map.**
+**Use the `"Color"` widget to plot the time for each of the symbols on the map.**
 
 * Change the parameter selected next to `"Color"` at the top of the page from `"pCO2_LIAR"` to `"time"`
-* Remove the minimum \(300\) and maximum \(500\) values from underneath the ‘“color bar”’ in ’“Graph Settings’”
+
+* Remove the minimum \(300\) and maximum \(500\) values from underneath the ‘“color bar”’ in ’“Graph Settings’” 
 * Then click the `"Redraw the Graph"` button.
 
 ![Float Trajectory showing date](../../.gitbook/assets/bgcmap4.png)
@@ -97,7 +105,7 @@ The color bar is now time and color of marker indicate the date the the buoy of 
 * Under ‘“Graph Type’” at the top of the page select’“time”‘as the’“X Axis”‘,’“depth”‘as the’“Y Axis”‘and’“Nitrate”‘as the’“Color”’
 * Then click the `"Redraw the Graph"` button.
 
-![Nitrate Section](../../.gitbook/assets/bgcsection1.png)
+![Nitrate section](../../.gitbook/assets/bgcsection1.png)
 
 **The data is upside-down and not much detail can be seen in the surface so lets fix those issues.**
 
@@ -105,5 +113,5 @@ The color bar is now time and color of marker indicate the date the the buoy of 
 * Change the Marker Size to `"10"`
 * Under `"Color Bar"`, set `"Maximum"` to `15`.
 
-![A better version of the Nitrate Section](../../.gitbook/assets/bgcsection2.png)
+![A better version of the nitrate section](../../.gitbook/assets/bgcsection2.png)
 

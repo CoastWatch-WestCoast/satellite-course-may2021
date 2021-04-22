@@ -1,30 +1,37 @@
+---
+description: Navigating the ERDDAP interface
+---
+
 # Exploring the data catalog
 
-There are many ERDDAP servers to chose from. For this example, we will use the ERDDAP operative by the CoastWatch West Coast Node.
+## List the datasets
+
+There are many ERDDAP servers to chose from. For this example, we will use the ERDDAP operated by the CoastWatch West Coast Node.
 
 * Enter the following URL into your browser: `https://coastwatch.pfeg.noaa.gov/erddap/` or Google `"ERDDAP west coast"`.
 
-To view all the available datasets, click “View a List of All 1,429 Datasets”  
- You will see all 1400+ datasets listed on the page. You don’t have to look through them all. There is a search feature to help find datasets of interests.
+### **To view all the available datasets, click “View a List of All 1,429 Datasets”**
 
-##  Finding datasets on ERDDAP
+You will see all 1400+ datasets listed on the page. You don’t have to look through them all. There is a search feature to help find datasets of interests.
+
+## Finding datasets on ERDDAP
 
 ERDDAP offers several ways to search for interesting datasets. We will use the full text search in this example. Full documentation of the search options is available at: `https://coastwatch.pfeg.noaa.gov/erddap/information.html#search`
 
-_Enter search criteria display SST datasets_
+### Enter search criteria display SST datasets
 
-* Us the back button on your browser to go back to the landing page \(`https://coastwatch.pfeg.noaa.gov/erddap/`\)
+* Us the back button on your browser to go back to the landing page  \(`https://coastwatch.pfeg.noaa.gov/erddap/`\) 
 * In the search box type “sst” and click the “Search’ button
 
-Further narrow the choices to datasets that have global coverage
+### Further narrow the choices to datasets that have global coverage
 
 * Add “global’ to the search box \[i.e. sst and global\] and click the”Search’ button.
 
 ##  Gather information about a dataset
 
-Within the search results you have access to information about each dataset to help you decide with which dataset is useful for your application. The search results For this example we will use the global SST & Sea Ice Analysis \(OSTIA\) from the UK Met Office.
+Within the search results you have access to information about each dataset to help you decide with which dataset is useful for your application.  For this example we will use the global SST & Sea Ice Analysis \(OSTIA\) from the UK Met Office.
 
-* Add “ostia” in the search box \(e.g. sst global ostia\) and click the “Search’ button.
+* Add “ostia” in the search box \(e.g. sst global ostia\) and click the “Search’ button. 
 * In the results you should several datasets, including the one displayed below.
 
 ![OSTIA search result](../../.gitbook/assets/ostia%20%281%29.png)
@@ -39,6 +46,6 @@ Within the search results you have access to information about each dataset to h
   * `"references"` for citing the dataset in publications
   * `"license"` for restrictions on using the data
   * `"acknowledgement"` often used to describe how to acknowledge use of the dataset
-  * `"creator_name"` for the entity that created the dataset
+  * `"creator_name"` for the entity that created the dataset 
 * When you are finished exploring the metadata, go back to the search results page.
 

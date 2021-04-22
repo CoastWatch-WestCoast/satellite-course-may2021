@@ -1,18 +1,24 @@
+---
+description: Using the Make-A-Graph interface
+---
+
 # Visualize and download data
 
-##  ERRDAP “Make A Graph” feature
+## ERRDAP “Make A Graph” feature
 
 Each ERDDAP dataset has a “Make A Graph” page that allows you to browse data by date and narrow down the spatial range of your of interest.
 
-Make sure you are on the search results page you generated in Chapter 1 by entering “sst global ostia” in the ERDDAP search box or by putting the following link in a browser: `https://coastwatch.pfeg.noaa.gov/erddap/search/index.html?page=1&itemsPerPage=1000&searchFor=ID+%3DjplUKMO_OSTIAv20`
+**Make sure you are on the search results page you generated in Chapter 1 by entering “sst global ostia” in the ERDDAP search box or by putting the following link in a browser:** `https://coastwatch.pfeg.noaa.gov/erddap/search/index.html?page=1&itemsPerPage=1000&searchFor=ID+%3DjplUKMO_OSTIAv20`
 
 ![ERDDAP results page for OSTIA](../../.gitbook/assets/ostia%20%281%29%20%281%29.png)
 
-On the OSTIA listing in the search results, click on the “graph” link in the “Make A Graph” column. The Make A Graph page for the OSTIA SST dataset will load.
+**On the OSTIA listing in the search results, click on the “graph” link in the “Make A Graph” column.** 
+
+The Make A Graph page for the OSTIA SST dataset will load.
 
 ![OSTIA SST Make A Graph page with widgets indicated](../../.gitbook/assets/ostia2.png)
 
-Use the widgets to adjust the map that appears on the right side of the “Make A Graph” page.
+#### Use the widgets to adjust the map that appears on the right side of the “Make A Graph” page.
 
 * **“Color” widget** - This widget has a misleading name. Use it to select the variable that displays on the map. By default `"analysed_sst"` is displayed. Click on the drop down menu to see the other choices. Try selecting `"sea_ice_fraction"` and watch how the map changes. When you are done, reselect `"analysed_sst"`. 
 * **“time \(UTC\)” widget** - Use it to select the date of interest. By default it is set on the most recent date. There are several ways to select a different date.
@@ -21,19 +27,19 @@ Use the widgets to adjust the map that appears on the right side of the “Make 
   * Try typing a date, e.g. 2018-06-15T12:00:00Z, directly into the date display. Then click “Redraw the Graph”. 
 * **“latitude” and “longitude” widgets** - These widgets work like the time widget, except that you can set with minimum and maximum values with the slider, the `"-"` and `"+"` buttons, and the solid blue left- and right-pointing arrows. 
 * **“File Type” widget** - Use this widget to select the output file type. There are over 30 types to choose from. Some of the most useful for data and image file types are listed below. A full description of file types can be found at this link:  [https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html)
-  * .nc - netCDF files 
-  * .mat - Matlab files 
-  * .json - JSON format 
-  * .png, .smallPng, .largePng, transparentPng 
-  * .geotif 
+  * .nc - netCDF files
+  * .mat - Matlab files
+  * .json - JSON format
+  * .png, .smallPng, .largePng, transparentPng
+  * .geotif
   * .pdf, .smallPdf, .largePdf
 
-##  Subsetting the area and selecting a date
+## Subsetting the area and selecting a date
 
 For this example, select an area off of the Washington coast for July 15, 2015 by doing the following:
 
 * Put in the following minimum and maximum latitude and longitude values using the widgets.
-  * `Latitudes: 45, 52` 
+  * `Latitudes: 45, 52`
   * `Longitudes: -129, -122` 
 * Then click the `"Redraw the Graph"` button. 
 * Next, use the “time \(UTC\)” widget to select a time of July 15, 2015 \(`2015-07-15T12:00:00Z`\). 
@@ -41,16 +47,20 @@ For this example, select an area off of the Washington coast for July 15, 2015 b
 
 ![WA coast, July 15, 2015](../../.gitbook/assets/wa_coast_fig1.png)
 
-_There is very little difference in the map color, so adjust the map color scale._ \* In the “Graph Settings” under “Color Bar”, \* for “Minimum” input `12` \* for “Maximum” input `20` \* Then click the `"Redraw the Graph"` button
+#### There is very little difference in the map color, so adjust the map color scale. 
+
+* In the “Graph Settings” under “Color Bar”, \* for “Minimum” input `12` \* for “Maximum” input `20` \* Then click the `"Redraw the Graph"` button
 
 ![WA Coast with rescaled colorbar ](../../.gitbook/assets/wa_coast_fig2.png)
 
-_You can even change the color palette._ \* Click the drop down next to `"Color Bar"` to see a selection of palettes.  
- \* The palettes beginning with `"KT"` are designed to show certain parameters best and with ADA compliance. Select the `KT_thermal palette`, which is designed for temperature maps, and click `"Redraw the Graph"`.
+#### You can even change the color palette. 
+
+* Click the drop down next to `"Color Bar"` to see a selection of palettes.
+* The palettes beginning with `"KT"` are designed to show certain parameters best and with ADA compliance. Select the `KT_thermal palette`, which is designed for temperature maps, and click `"Redraw the Graph"`.
 
 ![WA Coast using KT\_thermal color palette ](../../.gitbook/assets/wa_coast_fig3.png)
 
-##  Setting the file format
+## Setting the file format
 
 You can request the data in many formats. Find the drop down box below the “Redraw the Graph” button that is labeled `"File Type"`. Click on the drop down box to view a list of about 30 file formats.
 
@@ -66,15 +76,15 @@ Some of the most useful for data download are:
 
 For demonstration purposes, select `".largePng"`
 
-##  Download the image
+## Download the image
 
 You can download the data directly to your computer by clicking “Download the Data or an image”
 
 Alternatively, you can copy the URL in the “or view the URL” box. This URL contains the complete request of the data as you defined it. Put the URL in any browser to download the data. You can even send the URL to a colleague and they can download the data. More importantly, you can use the URL to import the data directly into analysis programs like R, Python, or Matlab.
 
-For this example use an image file. \* With the “File Type” set to .largePng, copy the URL in the “or view the URL” box \(see below\).  
-&gt;`https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplUKMO_OSTIAv20.largePng?analysed_sst[(2015-07-17T12:00:00Z)][(45.025):(52.025)][(-128.975):(-121.975)]&.draw=surface&.vars=longitude|latitude|analysed_sst&.colorBar=KT_thermal|||12|20|&.bgColor=0xffccccff`
+#### For this example use an image file. 
 
+* With the “File Type” set to .largePng, copy the URL in the “or view the URL” box \(see below\).   `https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplUKMO_OSTIAv20.largePng?analysed_sst[(2015-07-17T12:00:00Z)][(45.025):(52.025)][(-128.975):(-121.975)]&.draw=surface&.vars=longitude|latitude|analysed_sst&.colorBar=KT_thermal|||12|20|&.bgColor=0xffccccff`
 * Now open a new browser tab, paste in the URL, and hit return.
 * The map should appear as a PNG file in your browser. 
 * If you had selected ".nc", then a netCDF file would have downloaded onto your computer
@@ -82,11 +92,13 @@ For this example use an image file. \* With the “File Type” set to .largePng
 **A few tricks with images**
 
 * You can adjust the way the image looks, e.g. remove the legend, change the size. The documentation for this is at this link: [https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html\#GraphicsCommands](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands)
-* If you would like a map like this on a website you are building, just put the URL above into an HTML  tag. The image will be automatically included on your webpage.
+* If you would like a map like this on a website you are building, just put the URL above into an HTML  image tag &lt;a&gt;. The image will be automatically included on your webpage.
 
-##  Refining the data request
+## Refining the data request
 
-Now that you have defined the area of interest, you can add a time range and refine your data request. Make sure navigate you browser back to the `"Make A Graph"` page for the OSTIA dataset. The link is below if you do not have the page in your browser.  
+Now that you have defined the area of interest, you can add a time range and refine your data request. Make sure navigate you browser back to the `"Make A Graph"` page for the OSTIA dataset. 
+
+The link is below if you do not have the page in your browser.  
  [https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplUKMO\_OSTIAv20.graph?analysed\_sst](https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplUKMO_OSTIAv20.graph?analysed_sst)\[\(2015-07-17T12:00:00Z\)\]\[\(45.025\):\(52.025\)\]\[\(-128.975\):\(-121.975\)\]&.draw=surface&.vars=longitude\|latitude\|analysed\_sst&.colorBar=KT\_thermal\|\|\|12\|20\|&.bgColor=0xffccccf
 
 On the upper right part of the `"Make A Graph"` page below the dataset title, click on the `"Data Access Form"` link. The Data Access Form that loads \(figure below\) has been populated with selections you made in the “Make A Graph” page.
