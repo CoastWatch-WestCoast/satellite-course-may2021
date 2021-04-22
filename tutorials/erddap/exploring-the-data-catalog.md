@@ -27,7 +27,7 @@ Within the search results you have access to information about each dataset to h
 * Add “ostia” in the search box \(e.g. sst global ostia\) and click the “Search’ button.
 * In the results you should several datasets, including the one displayed below.
 
-![OSTIA search result](../../.gitbook/assets/ostia.png)
+![OSTIA search result](../../.gitbook/assets/ostia%20%281%29.png)
 
 * The listing \(pictured above\) gives access to a lot of information about the dataset. In a browser, try the following:
   * Mouse over the question mark `?` under `"Summary"` to get an overview of the dataset.

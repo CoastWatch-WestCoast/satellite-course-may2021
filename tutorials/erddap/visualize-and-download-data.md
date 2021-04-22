@@ -6,7 +6,7 @@ Each ERDDAP dataset has a “Make A Graph” page that allows you to browse data
 
 Make sure you are on the search results page you generated in Chapter 1 by entering “sst global ostia” in the ERDDAP search box or by putting the following link in a browser: `https://coastwatch.pfeg.noaa.gov/erddap/search/index.html?page=1&itemsPerPage=1000&searchFor=ID+%3DjplUKMO_OSTIAv20`
 
-![ERDDAP results page for OSTIA](../../.gitbook/assets/ostia%20%281%29.png)
+![ERDDAP results page for OSTIA](../../.gitbook/assets/ostia%20%281%29%20%281%29.png)
 
 On the OSTIA listing in the search results, click on the “graph” link in the “Make A Graph” column. The Make A Graph page for the OSTIA SST dataset will load.
 

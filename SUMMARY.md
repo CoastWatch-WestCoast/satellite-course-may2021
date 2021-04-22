@@ -12,8 +12,6 @@
   * [How to choose the best datasets for your projects](lectures/what-dataset-to-choose.md)
   * [Applications of Satellite Data](lectures/applications-of-satellite-data.md)
 * [Tutorials](tutorials/README.md)
-  * [ERDDAP Introduction](tutorials/untitled/README.md)
-    * [CoastWatch-WestCoast/satellite-course-may2021](tutorials/untitled/untitled.md)
   * [R Tutorial](tutorials/r-tutorial/README.md)
     * [Chapter 1 RerddapXtracto](tutorials/r-tutorial/chapter-1-introduction.md)
     * [Chapter 2 Extract data within a boundary](tutorials/r-tutorial/chapter-2-extract-data-within-a-boundary.md)
