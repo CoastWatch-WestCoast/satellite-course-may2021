@@ -26,7 +26,6 @@
     * [3. Extract data within a shapefile using ERDDAP](tutorials/python-tutorial/3.-extract-data-within-a-shapefile-using-erddap.md)
   * [ArcGIS tutorial](tutorials/arcgis-tutorial/README.md)
     * [Additional ArcGIS Tutorials](tutorials/arcgis-tutorial/additional-arcgis-tutorials.md)
-  * [Voyager tutorial](tutorials/voyager-tutorial.md)
 * [Archive](archive/README.md)
   * [Remote Sensing Basics - Shorter version](archive/remote-sensing-basics-shorter-version.md)
   * [5. Extract ocean color data in optically-shallow waters](archive/5.-extract-ocean-color-data-in-optically-shallow-waters.md)
