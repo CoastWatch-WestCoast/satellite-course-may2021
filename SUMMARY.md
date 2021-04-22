@@ -1,16 +1,6 @@
 # Table of contents
 
 * [Preface](README.md)
-* [LECTURES](lectures/README.md)
-  * [Introduction](lectures/introduction.md)
-  * [Remote Sensing Basics](lectures/remote-sensing-basics.md)
-  * [Ocean Color](lectures/ocean-color.md)
-  * [Sea Surface Temperature](lectures/sea-surface-temperature.md)
-  * [Altimetry](lectures/altimetry.md)
-  * [Ocean Surface Winds](lectures/ocean-surface-winds.md)
-  * [Sea Surface Salinity](lectures/sea-surface-salinity.md)
-  * [How to choose the best datasets for your projects](lectures/what-dataset-to-choose.md)
-  * [Applications of Satellite Data](lectures/applications-of-satellite-data.md)
 * [Tutorials](tutorials/README.md)
   * [R Tutorial](tutorials/r-tutorial/README.md)
     * [Chapter 1 RerddapXtracto](tutorials/r-tutorial/chapter-1-introduction.md)
