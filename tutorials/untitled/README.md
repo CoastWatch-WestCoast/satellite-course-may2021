@@ -1,4 +1,4 @@
-# CoastWatch-WestCoast/satellite-course-may2021
+# ERDDAP Introduction
 
 [Permalink](https://github.com/CoastWatch-WestCoast/satellite-course-may2021/blob/57de06ed1187915df236dfd7e11e9482840042be/tutorials/erddap/README.md)
 
