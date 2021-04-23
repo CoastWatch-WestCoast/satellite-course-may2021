@@ -29,8 +29,8 @@ for (pk in list.of.packages) {
 
 ##  Select the Satellite Data
 
-* Use the MUR SST dataset \(ID jplMURSST41mday\)
-* Gather information about the dataset \(metadata\) using **rerddap**
+* Use the MUR SST dataset \(ID jplMURSST41mday\). 
+* Gather information about the dataset \(metadata\) using **rerddap.** 
 * Displays the information
 
 ```text
@@ -42,7 +42,7 @@ parameter <- 'sst'
 
 ##  Get Satellite Data
 
-* Select an area off the coast of California: longitude range of -130 to -115 east and latitude range of 25 to 40 north
+* Select an area off the coast of California: longitude range of -130 to -115 east and latitude range of 25 to 40 north. 
 * Set the time range to days withing one month: tcoord=c\(‘2018-06-06’,‘2018-06-08’\)\). The values do have to be different.
 
 ```text
@@ -77,9 +77,7 @@ min.temp <- 17.5
 max.temp <- 18.5
 ```
 
-**Create another variable for habitat temperature**
-
-**Set the habitat temperature to equal NA**
+**Create another variable for habitat temperature and set the habitat temperature to equal NA**
 
 ```text
 SST2 <- SST

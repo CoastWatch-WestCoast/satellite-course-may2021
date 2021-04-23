@@ -73,17 +73,16 @@ ttext<-paste(paste(abs(xcoord), collapse="-"),"W, ", paste(ycoord, collapse="-")
 
 For each dataset, you will extract satellite data for the entire length of the available timeseries.
 
-* Dates must be defined separately for each dataset. **rxtracto\_3D** will crash if dates are entered that are not part of the timeseries.
-* The beginning \(earliest\) date to use in timeseries is obtained from the information returned in dataInfo.
+* Dates must be defined separately for each dataset. **rxtracto\_3D** will crash if dates are entered that are not part of the timeseries. 
+* The beginning \(earliest\) date to use in timeseries is obtained from the information returned in dataInfo. 
 * To get the ending \(most recent\) date to use in the timeseries, you will use the `last` option for time.
 
 ### Get the SeaWiFS data
 
-#### Examine the metadata for the SeaWiFS monthly dataset
+#### Examine the metadata for the SeaWiFS monthly dataset  \(ID = erdSWchlamday\)
 
 The script below:
 
-* SeaWiFS monthly dataset \(ID = erdSWchlamday\)
 * Gathers information about the dataset \(metadata\) using **rerddap**
 * Displays the information
 
@@ -110,9 +109,9 @@ dataInfo
 
 #### **Set the arguments for and run rxtracto\_3D with the script below:**
 
-* Use the name of the chlorophyll variable that was displayed above in dataInfo: **parameter &lt;- “chlorophyll”.** You can set this manually, but in this example, you will set **pamameter** directly from the variable returned from the rerddap::info\(\) function \(dataInfo\).
-* The metadata from dataInfo also shows you that this variable has an altitude coordinate that equals zero. Set the value of the time coordinate to zero: **zcoord &lt;- 0.**
-* Obtain the beginning and ending dates from the variable returned from the rerddap::info\(\) function \(dataInfo\).
+* Use the name of the chlorophyll variable that was displayed above in dataInfo: **parameter &lt;- “chlorophyll”.** You can set this manually, but in this example, you will set **pamameter** directly from the variable returned from the rerddap::info\(\) function \(dataInfo\). 
+* The metadata from dataInfo also shows you that this variable has an altitude coordinate that equals zero. Set the value of the time coordinate to zero: **zcoord &lt;- 0.** 
+* Obtain the beginning and ending dates from the variable returned from the rerddap::info\(\) function \(dataInfo\). 
 * Use the “last” option for the ending date instead of the actual date in the dataInfo
 
 ```text
@@ -136,14 +135,16 @@ chlSeaWiFS<-rxtracto_3D(dataInfo,parameter=parameter,
                         xcoord=xcoord,ycoord=ycoord,zcoord=zcoord)
 ```
 
+#### Remove the z coordinate \(altitude\) dimension 
+
 ```text
 # Remove extraneous zcoord dimension for chlorophyll 
 chlSeaWiFS$chlorophyll <- drop(chlSeaWiFS$chlorophyll)
 ```
 
-#### Now get MODIS data
+### Now get MODIS data
 
-First get the datadet metadata with “rerddap::info” by changing the dataset ID to “erdMH1chlamday”
+First get the dataset metadata with “rerddap::info” by changing the dataset ID to “erdMH1chlamday”
 
 ```text
 # Use rerddap to get information about the dataset
@@ -167,7 +168,7 @@ dataInfo
 
 #### **Set the arguments for, and runs, rxtracto\_3D**
 
-Since this dataset does not have an altitude dimension, remove zcoord as an argument in rxtracto\_3D
+Since this dataset does not have an altitude dimension, do not include the z coordinate as an argument in rxtracto\_3D
 
 ```text
 # Extract the parameter name from the metadata in dataInfo
@@ -187,7 +188,7 @@ chlMODIS<-rxtracto_3D(dataInfo,parameter=parameter,
                       xcoord=xcoord,ycoord=ycoord)
 ```
 
-#### Now get VIIRS data
+### Now get VIIRS data
 
 First get the dataset metadata with “rerddap::info” by changeing the dataset ID to “nesdisVHNSQchlaMonthly”
 
@@ -297,7 +298,7 @@ text(as.Date("1997-03-01"),2.2, "VIIRS",col="black", pos=4)
 
 If you needed a single timeseries from 1997 to present, you would have to use the plot above to devise some method to reconcile the difference in values where two datasets overlap. Alternatively, you could use the ESA OC-CCI \(ocean color climate change initiative\) dataset, which blends data from many satellite missions into a single dataset. Next we will add the ESA OC-CCI dataset to the plot above to see how it compares with data from the individual satellite missions.
 
-* Change the dataset ID to “pmlEsaCCI31OceanColorMonthly” in the rerddap::info function.
+* Change the dataset ID to “pmlEsaCCI31OceanColorMonthly” in the rerddap::info function. 
 * There are over 60 variables in this dataset, so the dataInfo is not displayed \(feel free to examine the dataInfo variable on your own\). 
 * This dataset has no altitude dimension. Do not include zcoord as an argument in the rxtracto\_3D function.
 
@@ -329,7 +330,7 @@ chlOCCCI$avg <- apply(chlOCCCI$chlor_a, c(3),function(x) mean(x,na.rm=TRUE))
 chlOCCCI$avgmap <- apply(chlOCCCI$chlor_a,c(1,2),function(x) mean(x,na.rm=TRUE))
 ```
 
-**Add ESA OCCI data to the plot**
+#### **Add ESA OCCI data to the plot**
 
 ```text
 ## Plot SeaWIFS
@@ -399,6 +400,7 @@ for(i in 1:4) {
 
 #png(file="CHL_averagemaps.png")
 library(grid)
+
 grid.arrange(plot_list[[1]],plot_list[[2]],plot_list[[3]],plot_list[[4]], nrow = 2)
 ```
 

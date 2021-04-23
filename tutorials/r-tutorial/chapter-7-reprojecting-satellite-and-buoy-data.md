@@ -6,24 +6,24 @@ This exercise demonstrates collecting satellite and in-situ buoy data as ancilla
 
 The exercise demonstrates the following techniques:
 
-* Finding and accessing in-situ buoy data in ERDDAP 
-* Accessing satellite data from ERDDAP 
+* Finding and accessing in-situ buoy data in ERDDAP
+* Accessing satellite data from ERDDAP
 * Making projected maps of ship tracks, buoy locations and satellite data
 
 The exercise demonstrates the following packages/functions:
 
-* **rerddap::info** - to retrieve information about a dataset from ERDDAP 
-* **rerddapXtracto::xtracto\_3D** - to extract satellite data from ERDDAP 
-* **rerddap::tabledap** - to extract ship track and buoy data from ERDDAP 
+* **rerddap::info** - to retrieve information about a dataset from ERDDAP
+* **rerddapXtracto::xtracto\_3D** - to extract satellite data from ERDDAP
+* **rerddap::tabledap** - to extract ship track and buoy data from ERDDAP
 * **oce** - to plot data from ERDDAP on a projected map
 
 This exercise accesses the following datasets:
 
-* NOAA Geo-polar Blended Sea Surface Temperature daily satellite data, ‘nesdisGeoPolarSSTN5NRT’ 
-* NDBC Buoys, ‘cwwcNDBCMet’ 
+* NOAA Geo-polar Blended Sea Surface Temperature daily satellite data, ‘nesdisGeoPolarSSTN5NRT’
+* NDBC Buoys, ‘cwwcNDBCMet’
 * A Ship Track from the R/V Healy ‘fsuResearchShipNEPP’
 
-These datasets are all provided in ERDDAP with lat-lon coordinates. For an example of working with datasets provided in projected \(ie. polar stereographic\) coordinates see \(insert link to projected datasets notebook\)
+These datasets are all provided in ERDDAP with lat-lon coordinates. For an example of working with datasets provided in projected \(ie. polar stereographic\) coordinates see \(insert link to projected datasets notebook\).
 
 ##  Install required packages and load libraries
 
@@ -52,6 +52,14 @@ for (pk in list.of.packages) {
 ##  Ship Track
 
 Get a track from the research ship Healy in Alaska. This dataset is in the PolarWatch ERDDAP with dataset id ‘fsuResearchShipNEPP’. Here we pull the track for a segment of data from June 2011.
+
+```text
+# View variable names to help form the track request
+shipDataInfo <- rerddap::info('fsuResearchShipNEPP')
+
+# Use details reurned from the info request to form a request for the track
+ship.df <- tabledap(shipDataInfo, fields = c('latitude',  'longitude', 'time','airTemperature'), 'time>=2011-06-21T00:00:00Z', 'time<=2011-06-29T00:00:00Z')
+```
 
 **Visualize the ship track**
 
@@ -132,9 +140,7 @@ length(unique(nightbuoy.df$station))
 ## [1] 22
 ```
 
-**Make a map with both the ship track and buoy locations**
-
-![](../../.gitbook/assets/c7b.png)
+#### **Make a map with both the ship track and buoy locations**
 
 ```text
 ## draw scalebar
@@ -176,6 +182,8 @@ mapPoints(longitude = nightbuoy.df$longitude,
           col = mypalette[as.integer(1+(numColors-1)*nightbuoy.df$col)], 
           pch = 20, cex = 1.25)
 ```
+
+![](../../.gitbook/assets/c7b.png)
 
 ##  Add Satellite SST Data
 

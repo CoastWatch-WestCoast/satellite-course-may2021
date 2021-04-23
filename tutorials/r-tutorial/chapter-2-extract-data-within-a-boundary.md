@@ -1,3 +1,7 @@
+---
+description: Extract data within an irregular (not rectangular) area
+---
+
 # Chapter 2 Extract data within a boundary
 
 > notebook filename \| 02-sanctuary.Rmd
@@ -6,7 +10,7 @@ In this exercise, you will download data from within the boundaries of the Monte
 
 The exercise demonstrates the following skills:
 
-* Using **rerddap** to retrieve information about a dataset from ERDDAP
+* Using **rerddap** to retrieve information about a dataset from ERDDAP 
 * Using the **rxtractogon** function to extract satellite data within an polygon over time 
 * Mapping satellite data
 
@@ -43,24 +47,43 @@ pkges = installed.packages()[,"Package"]
 The **rerddapXtracto** package comes with the dataset **mbnms** which conatains the longitude and latitude values for the boundary of the Monterey Bay National Marine Sanctuary. These coordinates draw the the boundary of the sanctuary on a map, like tracing a dot-to-dot drawing. Take a quick look at the contents of this data variable.
 
 ```text
+str(mbnms)
+```
+
+```text
 ## 'data.frame':    6666 obs. of  2 variables:
 ##  $ Longitude: num  -123 -123 -123 -123 -123 ...
 ##  $ Latitude : num  37.9 37.9 37.9 37.9 37.9 ...
 ```
 
-Additional sanctuary boundaries may be obtained at [http://sanctuaries.noaa.gov/library/imast\_gis.html](http://sanctuaries.noaa.gov/library/imast_gis.html).
+Additional sanctuary boundaries may be obtained at   
+[http://sanctuaries.noaa.gov/library/imast\_gis.html](http://sanctuaries.noaa.gov/library/imast_gis.html).
 
-**The script below:**
+#### **The script below e**xtracts the longitude and latitude data into vector variables
 
-* Extracts the longitude and latitude data into vector variables
+```text
+# Extract the longitude and latitude data into vector variables
+xcoord <- mbnms$Longitude
+ycoord <- mbnms$Latitude
+```
 
-##  Select the chloropyll dataset
+##  Select the chlorophyll dataset
 
 For this example we will use 750 m VIIRS monthly chlorophyll dataset \(ID erdVHNchlamday\)
 
-**The script below:**  
- \* Gathers information about the dataset \(metadata\) using **rerddap**  
- \* Displays the information
+**The script below:**
+
+* Gathers information about the dataset \(metadata\) using **rerddap**
+* Displays the information
+
+```text
+# Use rerddap to get dataset metadata 
+# erdVHNchlamday is N. Pacific 750 m VIIRS chl
+dataInfo <- rerddap::info('erdVHNchlamday') 
+
+# Display the metadata 
+dataInfo
+```
 
 ```text
 ##  erdVHNchlamday 
@@ -77,23 +100,30 @@ For this example we will use 750 m VIIRS monthly chlorophyll dataset \(ID erdVHN
 
 ##  Set the options for rxtractogon
 
-* Use the name of the chlorophyll parameter that was displayed above in dataInfo: **parameter &lt;- “chla”**
+* Use the name of the chlorophyll parameter that was displayed above in dataInfo: **parameter &lt;- “chla”** 
 * The metadata from dataInfo also shows you that this variable has a altitude coordinate that equals zero. Set the value of the time coordinate to zero: **zcoord &lt;- 0.** 
 * The time variable passed to xtracogon must contain two elements, the start and endpoints of the desired time period.
-  * This example makes use of the “last” option of ERDDAP to retrieve data from the most recent time step. 
+  * This example makes use of the “last” option of ERDDAP to retrieve data from the most recent time step.
   * The “last’ option also accepts the”-" operator. To request the time step with the second most recent data use “last-1”.
   * In the script below the time variable \(tcoord\) is defined as **tcoord &lt;- c\(“last-1”, “last”\)**
 
 ##  Extract data and mask it using rxtractogon
 
-* Set the arguments within the **rxtractogon** function using the dataset information \(dataInfo\), the longitude \(xcoord\) and latitude \(ycoord\) vectors from the CSV file, the time \(tcoord\) vector and altitude \(zcoord\) variable.
-* Then run **rxtractogon** to extract data from the “erdVHNchlamday” dataset and mask out data not falling within the MBNMS boundary. 
+* Set the arguments within the **rxtractogon** function using the dataset information \(dataInfo\), the longitude \(xcoord\) and latitude \(ycoord\) vectors from the CSV file, the time \(tcoord\) vector and altitude \(zcoord\) variable. 
+* Then run **rxtractogon** to extract data from the “erdVHNchlamday” dataset and mask out data not falling within the MBNMS boundary.
+
+```text
+## Request the data
+sanctchl <- rxtractogon (dataInfo, parameter=parameter, xcoord=xcoord, 
+                         ycoord=ycoord, tcoord=tcoord, zcoord=zcoord)
+
+```
+
 * List the data
 
 ```text
-## Registered S3 method overwritten by 'httr':
-##   method           from  
-##   print.cache_info hoardr
+## List the returned data
+str(sanctchl)
 ```
 
 ```text
@@ -119,5 +149,16 @@ The extracted data contains two time periods of chlorophyll data within the sanc
 plotBBox(sanctchl1, plotColor = 'chlorophyll',maxpixels=100000)
 ```
 
+![](../../.gitbook/assets/r_2.5.2.png)
+
 ###  Apply a function to the data
+
+Chlorophyll data is often plotted as log. We can apply a function to the plotting routine to convert the chlorophyll values to log. 
+
+```text
+myFunc <- function(x) log(x) 
+plotBBox(sanctchl1, plotColor = 'chlorophyll',maxpixels=100000, myFunc=myFunc)
+```
+
+![](../../.gitbook/assets/r_2.5.2b.png)
 

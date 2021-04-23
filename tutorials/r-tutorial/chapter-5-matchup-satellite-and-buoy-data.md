@@ -52,9 +52,9 @@ for (pk in list.of.packages) {
 
 ### **Extract data using the tabledap function**
 
-* For every day in August 2018
-* In the region bounded by 30.86 to 41.75 north latitude and -128 to -116 east longitude
-* Request the station, latitude, longitude, time, and water temperature parameters
+* For every day in August 2018 
+* In the region bounded by 30.86 to 41.75 north latitude and -128 to -116 east longitude 
+* Request the station, latitude, longitude, time, and water temperature parameters 
 * Put the data into a data frame
 
 ```text
@@ -93,10 +93,11 @@ dailybuoy <- subset(buoy.df,hour(time)==22)
 
 ## Extract SST satellite data for matchups to buoy data.
 
-**Examine the metadata for the VIIRS monthly dataset \(ID = erdVHsstaWS3day\)**  
-**The script below:**
+#### **Examine the metadata for the VIIRS monthly dataset \(ID = erdVHsstaWS3day\)**
 
-* Gathers metadata by using the **rerddap::info** function
+The script below:
+
+* Gathers metadata by using the **rerddap::info** function 
 * Display the information
 
 ```text
@@ -122,9 +123,9 @@ dataInfo
 
 ### **Extract the matchup data using rxtracto**
 
-* Use the variable name in dataInfo for the parameter argument
-* Use the longitude, latitude, and time coordinates from dailybuoy to set xcoord, ycoord, and tcoord
-* This dataset has a altitude dimension, so add a vector of zeros, one for each matchup
+* Use the variable name in dataInfo for the parameter argument 
+* Use the longitude, latitude, and time coordinates from dailybuoy to set xcoord, ycoord, and tcoord 
+* This dataset has a altitude dimension, so add a vector of zeros, one for each matchup 
 * Run rxtracto
 
 ```text

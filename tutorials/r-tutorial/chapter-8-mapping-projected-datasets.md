@@ -54,9 +54,7 @@ We will use the monthly science quality dataset for the Northern Hemisphere \(ER
 
 ![The dataset listing from a search for &#x2018;NSIDC CDR&#x2019;](https://polarwatch.noaa.gov/sites/default/files/2020-03/R_projected_datasets_erddap_search_listing.png)
 
-The dataset listing from a search for ‘NSIDC CDR’
-
-**Preview the dat**
+**Preview the data**
 
 From the dataset listing, click on the **graph** link to the left of the dataset title. Using the selectors on the left you can quickly preview maps of the data for your times of interest.
 
@@ -64,11 +62,9 @@ You can generate a URL for a netCDF download of the data for the previewed image
 
 ![A preview of the NSIDC Sea Ice Concentration dataset in the PolarWatch ERDDAP](https://polarwatch.noaa.gov/sites/default/files/2020-03/R_projected_datasets_erddap_preview.png)
 
-A preview of the NSIDC Sea Ice Concentration dataset in the PolarWatch ERDDAP
+**View the detailed metadata**
 
-**View Detailed Inf**
-
-From the dataset listing, click on the **M** link to the right of the dataset title. This page will show details about the dataset including the projection. We can see that this is a polar stereographic projection with EPSG code 3411 and also the proj4 string for the dataset. In this case the projection is NSIDC Polar Stereographic North.
+From the dataset listing, click on the **M** \(metadata\) link to the right of the dataset title. This page will show details about the dataset including the projection. We can see that this is a polar stereographic projection with EPSG code 3411 and also the proj4 string for the dataset. In this case the projection is NSIDC Polar Stereographic North.
 
 ![The metadata page provides important information about the dataset such as projection details.](https://polarwatch.noaa.gov/sites/default/files/2020-03/R_projected_datasets_erddap_dataset_info.png)
 
@@ -103,9 +99,36 @@ We will now use R and the ERDDAP API to generate a sea ice data request. Subsett
 
 First, we form a request for the full lat-lon grid using the dataset id **nsidcCDRice\_nh\_grid** and the default axis extent values. As demostrated previously, we can use a download URL from the lat-lon grid data access page as a template for data requests in R. Then we’ll download the data and read the netCDF file variables into R.
 
+```text
+# Download the lat-lon grid
+# Use the dataset id 'nsidcCDRice_nh_grid' and the default axis extent values
+
+url <- 'https://polarwatch.noaa.gov/erddap/griddap/'
+
+grid_id <- 'nsidcCDRice_nh_grid'
+
+grid_urlcall <- paste0(url,grid_id,'.nc?longitude[(5812500.0):1:(-5337500.0)][(-3837500.0):1:(3737500.0)],latitude[(5812500.0):1:(-5337500.0)][(-3837500.0):1:(3737500.0)]')
+
+grid_nc <- download.file(grid_urlcall,destfile="grid.nc",mode='wb')
+
+# Read the grid file
+gridFid <- nc_open('grid.nc')
+ygrid <- ncvar_get(gridFid, varid="ygrid")
+xgrid <- ncvar_get(gridFid, varid="xgrid")
+longitude <- ncvar_get(gridFid, varid="longitude")
+latitude <- ncvar_get(gridFid, varid="latitude")
+nc_close(gridFid)
+```
+
 **Find the x and y indices that correspond with your area of interest**
 
 Next we will get the indices of our area of interest. We will use these indices later to make subsetted data requests. For this example we are interested in all data north of 75°. We will find all coordinate values greater than or equal to 75°N. To subset by longitude you can add a longitude query. The range is an extent that covers all data north of 75° so we will be requesting the smallest box of data that covers our desired latitude range. Note that our returned request will include points south of 75°N to accomplish this.
+
+```text
+inds = which(latitude > 75, arr.ind=TRUE)
+rowrange <- range(inds[,1])
+colrange <- range(inds[,2])
+```
 
 **Request the sea ice dataset using the selected indices from the lat/lon grid**
 
@@ -133,6 +156,21 @@ data_nc <- download.file(urlcall,destfile="data.nc",mode='wb')
 ```
 
 **Read the downloaded netCDF file and load the ice data into R variables**
+
+```text
+dataFid <- nc_open('data.nc')
+
+datatime <- ncvar_get(dataFid, varid="time")
+datatime <- as.Date(as.POSIXlt(datatime,origin='1970-01-01',tz= "GMT"))
+
+ygrid <- ncvar_get(dataFid, varid="ygrid")
+xgrid <- ncvar_get(dataFid, varid="xgrid")
+
+seaiceCDR <- ncvar_get(dataFid, varid=varnames[1])
+seaiceGoddard <- ncvar_get(dataFid, varid=varnames[2])
+
+nc_close(dataFid)
+```
 
 ##  Make maps of the ice data
 
@@ -165,13 +203,35 @@ nc_close(gridSubsetFid)
 
 Choose a date to use for the map and determine the index value for the date
 
+```text
+plotdate <- '2017-12-01'
+idate = which((month(datatime)==month(plotdate)) & (year(datatime)==year(plotdate)))
+```
+
 Make a long-format dataframe for that time period to use with ggplot
 
+```text
+dims <- dim(longitude)
+icemap.df <- data.frame(Longitude=array(longitudeSubset,dims[1]*dims[2]),
+                        Latitude=array(latitudeSubset,dims[1]*dims[2]))
+icemap.df$Seaice <- array(seaiceCDR[,,idate],dims[1]*dims[2])
+```
+
 This dataset has a fill value of 2.54 which represents a land mask. Replace that with NA before plotting.
+
+```text
+icemap.df$Seaice[icemap.df$Seaice > 2] <- NA 
+```
 
 ### **Create a map with a geographical grid**
 
 See how **ggplot** plots the dataset as a standard geographical lat/lon plot.
+
+```text
+ggplot(aes(x = Longitude, y = Latitude), data = icemap.df) + 
+       geom_point(aes(color=Seaice)) + 
+       scale_color_gradientn(colours=rev(brewer.pal(n = 5, name = "Blues")),na.value="black") 
+```
 
 ![Map with a geographical grid](../../.gitbook/assets/c8e.png)
 
@@ -247,4 +307,18 @@ ggplot(aes(x = Longitude, y = Latitude), data = icemap.df) +
 ### Create a map using projected coordinates
 
 Finally, if you don’t need to work with lat/lon coordinates you can plot the data in projected coordinates using the **xgrid** and **ygrid** variables.
+
+```text
+dims <- dim(xgrid)
+icemap2 <- expand.grid(xgrid=xgrid,ygrid=ygrid)
+icemap2$Seaice <- array(seaiceCDR[,,idate],dim(xgrid)*dim(ygrid))
+
+icemap2$Seaice[icemap2$Seaice > 2] <- NA 
+
+ggplot(aes(x = xgrid, y = ygrid, fill=Seaice), data = icemap2) + 
+       geom_tile() + coord_fixed(ratio = 1) + scale_y_continuous(labels = comma) + scale_x_continuous(labels = comma) +
+       scale_fill_gradientn(colours=rev(brewer.pal(n = 5, name = "Blues")),na.value="black") 
+```
+
+![](../../.gitbook/assets/c8h%20%281%29.png)
 

@@ -78,12 +78,12 @@ For this example we will use the SeaWiFS 8-day composite chlorophyll dataset \(I
 
 **The script below:**
 
-* Gathers information about the dataset \(metadata\) using **rerddap**
+* Gathers information about the dataset \(metadata\) using **rerddap** 
 * Displays the information
 
 **Set the following arguments for rerddap**
 
-* Set the dataset ID: dataset &lt;- ‘erdSW2018chla8day’
+* Set the dataset ID: dataset &lt;- ‘erdSW2018chla8day’ 
 * The default source ERDDAP for **rerddap** is “[https://upwell.pfeg.noaa.gov/erddap](https://upwell.pfeg.noaa.gov/erddap)”. Since we are pulling the data from the ERDDAP at “[http://coastwatch.pfeg.noaa.gov/erddap/](http://coastwatch.pfeg.noaa.gov/erddap/)”, change the url to url = “[http://coastwatch.pfeg.noaa.gov/erddap/](http://coastwatch.pfeg.noaa.gov/erddap/)”
 
 ```text
@@ -110,11 +110,11 @@ dataInfo
 
 ## Extract the satellite data
 
-* Double check dataInfo to make sure the dataset covers the time, longitude, and latitude ranges in your XYT data.
-* Use the name of the chlorophyll parameter that was displayed above in dataInfo: **parameter &lt;- “chlorophyll”**
-* Use the xcoord, ycoord, and tcoord vectors you extracted from the marlin tag file.
-* Some datasets have an altitude dimension. If so, then zcood must be included in the rxtracto call. The “erdSW2018chla8day” dataset does not include an altitude dimension.
-* Define the search “radius” for the gridded data. The **rxtracto** function allow you to set the size of the box used to collect data around the track points using the xlen and ylen arguments. The values for xlen and ylen are in degrees. For our example we 0.2 degrees for both arguments. Note: You can also submit vectors for xlen and ylen, as long as the arethe same length as xcoord, ycoord, and tcoord
+* Double check dataInfo to make sure the dataset covers the time, longitude, and latitude ranges in your XYT data. 
+* Use the name of the chlorophyll parameter that was displayed above in dataInfo: **parameter &lt;- “chlorophyll”.** 
+* Use the xcoord, ycoord, and tcoord vectors you extracted from the marlin tag file. 
+* Some datasets have an altitude dimension. If so, then zcood must be included in the rxtracto call. The “erdSW2018chla8day” dataset does not include an altitude dimension. 
+* Define the search “radius” for the gridded data. The **rxtracto** function allow you to set the size of the box used to collect data around the track points using the xlen and ylen arguments. The values for xlen and ylen are in degrees. For our example we 0.2 degrees for both arguments. Note: You can also submit vectors for xlen and ylen, as long as the arethe same length as xcoord, ycoord, and tcoord.  
 * Run the rxtracto function to extract the data from ERDDAP.
 
 ```text
@@ -131,12 +131,6 @@ swchl <- rxtracto(dataInfo,
                   parameter=parameter, 
                   xcoord=xcoord, ycoord=ycoord, 
                   tcoord=tcoord, xlen=xlen, ylen=ylen)
-```
-
-```text
-## Registered S3 method overwritten by 'httr':
-##   method           from  
-##   print.cache_info hoardr
 ```
 
 After the extraction is complete, “swchl” will contain the following columns.
@@ -200,9 +194,11 @@ This match up was done using weekly \(8-day\) data. Try rerunning the example us
 
 In July 2019 version 0.4.1 of “reddapXtracto”" was updated allowing “rxtracto”" to work on data that crosses the dateline. In this example we will extract chlorophyll data for a grid of stations along the Aleutian Islands.
 
-**Create an station array**  
- For crossing the dateline the longitudes for that animal/ship track must be in 0-360 format.  
- \* Create a grid of stations from 172E to 170W \(190°\) and 50-54N, spced every 2°. \* Then, set up vectors with these values, and then make arrays of the station longitudes and latitudes
+#### **Create an station array**
+
+ For crossing the dateline the longitudes for that animal/ship track must be in 0-360 format.
+
+* Create a grid of stations from 172E to 170W \(190°\) and 50-54N, spced every 2°. \* Then, set up vectors with these values, and then make arrays of the station longitudes and latitudes.
 
 ```text
 lat <- seq(50,54,2)
@@ -212,28 +208,27 @@ stax <- matrix(lon,nrow=length(lat),ncol=length(lon),byrow=TRUE)
 stay <- matrix(lat,nrow=length(lat),ncol=length(lon),byrow=FALSE)
 ```
 
-To input values into “rxtracto” the longitudes and latitudes need to be in vector format
+* To input values into “rxtracto” the longitudes and latitudes need to be in vector format.
 
 ```text
 xcoord <- as.vector(stax) 
 ycoord <- as.vector(stay) 
 ```
 
-Define the search “radius” in the x any y directions, in units of degrees
+* Define the search “radius” in the x any y directions, in units of degrees.
 
 ```text
 xlen <- 0.2 
 ylen <- 0.2 
 ```
 
-Create an array of dates. For this exercise we are going to assume all stations were sampled in the same month, so we are going to make all the values the same, but they don’t have to be.
+* Create an array of dates. For this exercise we are going to assume all stations were sampled in the same month, so we are going to make all the values the same, but they don’t have to be.
 
 ```text
 tcoord <- rep('2019-04-15',length(xcoord))
 ```
 
-Selects the dataset and parameter for the extraction  
- In this example the dataset chosen is the monthly NOAA VIIRS chlorophyll data
+* Selects the dataset and parameter for the extraction. In this example the dataset chosen is the monthly NOAA VIIRS chlorophyll data
 
 ```text
 dataset <- 'nesdisVHNSQchlaMonthly'
@@ -260,13 +255,13 @@ dataInfo
 ##          Units: mg m^-3
 ```
 
-Since this dataset has an altitude dimension, we need to supply an altitude parameter in the “rxtracto” call
+#### Since this dataset has an altitude dimension, we need to supply an altitude parameter in the “rxtracto” call
 
 ```text
 zcoord <- 0.*xcoord
 ```
 
-Now we will make the call to match up satellite data with station locations.
+#### Now we will make the call to match up satellite data with station locations.
 
 ```text
 chl <- rxtracto(dataInfo, 
@@ -275,24 +270,26 @@ chl <- rxtracto(dataInfo,
                   tcoord=tcoord, xlen=xlen, ylen=ylen)
 ```
 
-Next we will map out the data. Will do this two different ways, using base graphics and using “ggplot”. “plotTrack”, the routine used in the example above, is part of the “rerddapXtracto” package, and is designed to easily plot the output from “rxtracto”, but currently it can not handle crossing the dateline, so we can’t use it for this example.
+#### Next we will map out the data. 
+
+The plotting routine used above \(plotTrack\) is part of the “rerddapXtracto” package. It is designed for easy plotting of output from “rxtracto”, but cannot handle crossing the dateline. Two alternative approaches to plot the data are described below.
 
 ## Method 1: Make a map using base graphics
 
-First set up the color palette. This will use a yellow-green palette from the Brewer package
+* First set up the color palette. This will use a yellow-green palette from the Brewer package
 
 ```text
 cols <- brewer.pal(n = 9, name = "YlGn")
 chlcol <- cols[as.numeric(cut(chl$'mean chlor_a',breaks = 9))]
 ```
 
-Identify stations which have a satellite values
+* Identify stations which have a satellite values
 
 ```text
 gooddata <- !is.na(chl$'mean chlor_a')
 ```
 
-Set-up the layout to have a map and a color bar
+* Set-up the layout to have a map and a color bar
 
 ```text
 oldmar <- par("mar")
@@ -300,7 +297,7 @@ layout(t(1:2),widths=c(6,1))
 par(mar=c(4,4,1,.5))
 ```
 
-Create the base map, and then overlay stations with data, and then overlay empty circles around all statons
+* Create the base map, and then overlay stations with data, and then overlay empty circles around all stations
 
 ```text
 ww2 <- map('world', wrap=c(0,360), plot=FALSE, fill=TRUE)
@@ -311,7 +308,9 @@ points(xcoord[gooddata],ycoord[gooddata],col=chlcol, pch=19, cex=.9)
 points(xcoord,ycoord, pch=1, cex=.9)
 ```
 
-Add the colorbar
+![](../../.gitbook/assets/c_stations.png)
+
+* Add the colorbar
 
 ```text
 par(mar=c(4,.5,5,3))
@@ -320,15 +319,25 @@ image(y=chlv,z=t(1:9), col=cols, axes=FALSE, main="Chl", cex.main=.8)
 axis(4,mgp=c(0,.5,0),las=1)
 ```
 
+![](../../.gitbook/assets/r.3.10.png)
+
 ##  Method 2: ggplot graphics.
 
-ggplot handles colorbars much easier than base graphics!
+The ggplot package handles colorbars much easier than R base graphics!
 
-Put station lat, long and chl values into a dataframe for passing to ggplot
+* Put station lat, long and chl values into a dataframe for passing to ggplot.
 
-Get land boundary data in 0-360 units of longitude.
+```text
+chlsta <- data.frame(x=xcoord,y=ycoord,chl=chl$'mean chlor_a')
+```
 
-Make the map
+* Get land boundary data in 0-360 units of longitude.
+
+```text
+mapWorld <- map_data("world", wrap=c(0,360))
+```
+
+* Make the map.
 
 ```text
 ggplot(chlsta) +
@@ -338,4 +347,6 @@ ggplot(chlsta) +
   scale_color_gradientn(colours=brewer.pal(n = 8, name = "YlGn")) +
   labs(x="", y="")
 ```
+
+![](../../.gitbook/assets/c_stations2.png)
 
