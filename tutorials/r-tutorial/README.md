@@ -10,7 +10,7 @@ This document describes R scripts used for demonstrations in the NOAA Satellite 
 
 This chapter will provide an overview of the main rerddapXtracto functions. Please review the information presented here before moving on to the other chapters.
 
-The remaining chapters each contain a separate demonstration. The demonstrations are HTML or PDF versions of R notebooks. The source notebook file \(.Rmd\) are available for following along during the course or on your own.
+The remaining chapters each contain a separate demonstration. The demonstrations are HTML or PDF versions of R notebooks. The source notebook file \(.Rmd\) are available for following along during the course or on your own from our [GitHub repository](https://github.com/CoastWatch-WestCoast/r_code).
 
 **Chapter 2: Extract data within a boundary**  
  Visualize data from within the boundaries of the Monterey Bay National Marine Sanctuary and visualize the data in a map.
