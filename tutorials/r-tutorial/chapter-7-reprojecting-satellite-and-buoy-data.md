@@ -1,8 +1,14 @@
+---
+description: >-
+  Collecting multiple types of data from ERDDAP servers and mapping the data in
+  a new projection
+---
+
 # Chapter 7 Reprojecting satellite and buoy data
 
-> notebook filename \| 07\_projected\_maps\_buoys.Rmd
+> notebook file \| [07\_projected\_maps\_buoys.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
-This exercise demonstrates collecting satellite and in-situ buoy data as ancillary data that complement the mission of a research cruise. We will download the cruise track, satellite, and buoy data from ERDDAP and then map all of the data in an Alaska Albers projection.
+The CoastWatch program provides ocean satellite data and also non-satellite data that may be useful for ocean scientists. In exercise, we will obtain cruise track data from a research ship, in-situ buoy data, and satellite sea surface temperature data from the PolarWatch ERDDAP data server and then map all three types of the data on a map in an Alaska Albers projection.
 
 The exercise demonstrates the following techniques:
 
@@ -10,20 +16,20 @@ The exercise demonstrates the following techniques:
 * Accessing satellite data from ERDDAP
 * Making projected maps of ship tracks, buoy locations and satellite data
 
-The exercise demonstrates the following packages/functions:
+Key R packages/functions used:
 
 * **rerddap::info** - to retrieve information about a dataset from ERDDAP
 * **rerddapXtracto::xtracto\_3D** - to extract satellite data from ERDDAP
 * **rerddap::tabledap** - to extract ship track and buoy data from ERDDAP
 * **oce** - to plot data from ERDDAP on a projected map
 
-This exercise accesses the following datasets:
+Datasets used:
 
 * NOAA Geo-polar Blended Sea Surface Temperature daily satellite data, ‘nesdisGeoPolarSSTN5NRT’
 * NDBC Buoys, ‘cwwcNDBCMet’
 * A Ship Track from the R/V Healy ‘fsuResearchShipNEPP’
 
-These datasets are all provided in ERDDAP with lat-lon coordinates. For an example of working with datasets provided in projected \(ie. polar stereographic\) coordinates see \(insert link to projected datasets notebook\).
+These datasets are all provided in ERDDAP with lat-lon coordinates. For an example of working with datasets provided in projected \(ie. polar stereographic\) coordinates see the "[Mapping projected datasets](chapter-8-mapping-projected-datasets.md)" exercise in this tutorial.
 
 ##  Install required packages and load libraries
 
@@ -51,7 +57,7 @@ for (pk in list.of.packages) {
 
 ##  Ship Track
 
-Get a track from the research ship Healy in Alaska. This dataset is in the PolarWatch ERDDAP with dataset id ‘fsuResearchShipNEPP’. Here we pull the track for a segment of data from June 2011.
+Get a track from the research ship Healy in Alaska. This dataset is in the PolarWatch ERDDAP with dataset id ‘fsuResearchShipNEPP’. Pull the track for a segment of data from June 2011.
 
 ```text
 # View variable names to help form the track request
@@ -63,9 +69,9 @@ ship.df <- tabledap(shipDataInfo, fields = c('latitude',  'longitude', 'time','a
 
 **Visualize the ship track**
 
-Here we demonstrate viewing the track in Alaska Albers projection which is commonly used by local scientists. See the Fish and Wildlife reference link for more info on projections in Alaska.
+Map the track in the Alaska Albers projection, which is commonly used by scientists working in Alaskan waters. See the Fish and Wildlife reference link for more info on projections in Alaska.
 
-The **oce** package is great for making maps in a variety of projections. The **oce::mapPlot** function accepts projections in a number of formats, see the mapPlot reference below for more details. Here we specify the projection with the proj4 string for Alaska Albers EPSG:6393.
+The **oce** package is great for making maps in a variety of projections. The **oce::mapPlot** function accepts projections in a number of formats \(for details see the mapPlot reference below\). For this exercise we  will specify the projection with the proj4 string for Alaska Albers EPSG:6393.  
 
 ```text
 # define map extents

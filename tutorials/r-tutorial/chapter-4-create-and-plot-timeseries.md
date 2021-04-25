@@ -1,6 +1,6 @@
 # Chapter 4 Create and plot timeseries
 
-> notebook filename \| 05-timeseries\_chl.Rmd
+> notebook file \| [05-timeseries\_chl.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
 This example extracts a time-series of monthly satellite chlorophyll data for the period of 1997-present from four different monthly satellite datasets:
 

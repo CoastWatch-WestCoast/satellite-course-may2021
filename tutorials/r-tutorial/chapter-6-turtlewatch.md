@@ -1,6 +1,14 @@
 # Chapter 6 TurtleWatch
 
-> notebook filename \| 07\_turtlewatch\_xtracto.Rmd
+> notebook file \| [07\_turtlewatch\_xtracto.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
+
+The TurleWatch project investigated the thermal habitat of loggerhead sea turtles in the Pacific Ocean north of the Hawaiian Islands. Research results indicate that most loggerhead turtles stay in water between 17.5°C and 18.5°C. When the 17.5°C to 18.5°C temperature contour is drawn on a map of sea surface temperature conditions, it delineates the boundary of the loggerhead's preferred habitat.  
+
+In this exercise you will plot the thermal boundary of loggerhead sea turtles using satellite sea surface temperature. The exercise demonstrates the following techniques:
+
+* Using **xtracto\_3D** to extract data from a rectangular area 
+* Masking a data array
+* Plotting maps using **ggplot**
 
 ##  Install required packages and load libraries
 

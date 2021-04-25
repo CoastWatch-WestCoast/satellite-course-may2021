@@ -1,6 +1,6 @@
 # Chapter 3 Matchups to ship or animal tracks
 
-> notebook filename \| 03-xyt\_matchup.Rmd
+> notebook file \| [03-xyt\_matchup.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
 This exercise you will extract satellite data around a set of points defined by longitude, latitude, and time coordinates like that produced by an animal telemetry tag, and ship track, or a glider tract.
 

@@ -1,6 +1,6 @@
 # Chapter 8 Mapping projected datasets
 
-> notebook filename \| 08\_projected\_dataset.Rmd
+> notebook file \| [08\_projected\_dataset.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
 This example demonstrates the following techniques for working with sea ice data served in polar projected coordinates:
 

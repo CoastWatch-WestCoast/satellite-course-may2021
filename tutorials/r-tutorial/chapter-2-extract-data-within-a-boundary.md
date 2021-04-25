@@ -4,7 +4,7 @@ description: Extract data within an irregular (not rectangular) area
 
 # Chapter 2 Extract data within a boundary
 
-> notebook filename \| 02-sanctuary.Rmd
+> notebook filename \| [02-sanctuary.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
 In this exercise, you will download data from within the boundaries of the Monterey Bay National Marine Sanctuary \(MBNMS\) and visualize the data in a map.
 
