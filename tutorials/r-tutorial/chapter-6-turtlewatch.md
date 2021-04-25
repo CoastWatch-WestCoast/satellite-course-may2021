@@ -1,4 +1,4 @@
-# Chapter 6 TurtleWatch
+# Chapter 6 Define a marine habitat
 
 > notebook file \| [07\_turtlewatch\_xtracto.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 

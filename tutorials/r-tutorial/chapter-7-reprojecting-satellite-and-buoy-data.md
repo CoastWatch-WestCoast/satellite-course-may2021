@@ -4,7 +4,7 @@ description: >-
   a new projection
 ---
 
-# Chapter 7 Reprojecting satellite and buoy data
+# Chapter 7 Reprojecting gridded and tabular data
 
 > notebook file \| [07\_projected\_maps\_buoys.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
