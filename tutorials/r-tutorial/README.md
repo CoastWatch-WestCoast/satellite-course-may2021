@@ -26,7 +26,7 @@ Extract time-series for fours different satellite chlorophyll datasets. Plot the
 Extract SST buoy data from ERDDAP tabular database and then extract the SST satellite data that is coincident with the buoy data.
 
 **Chapter 6 - Define a marine habitat**  
- Import SST data and apply a temperature threshold to identify turtle habitats
+Import SST data and apply a temperature threshold to identify turtle habitats
 
 **Chapter 7 - Reprojecting gridded and tabular data**    
 Obtain cruise track data, buoy data, and satellite data from ERDDAP and map all three types of the data on a map in an Alaska Albers projection
