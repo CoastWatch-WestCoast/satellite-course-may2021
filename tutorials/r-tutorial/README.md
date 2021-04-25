@@ -14,7 +14,7 @@ The source notebook file \(.Rmd\) are available for following along during the c
 An overview of the main rerddapXtracto functions. 
 
 **Chapter 2 - Extract data within a boundary**  
- Visualize data from within the boundaries of the Monterey Bay National Marine Sanctuary and visualize the data in a map.
+Visualize data from within the boundaries of the Monterey Bay National Marine Sanctuary and visualize the data in a map.
 
 **Chapter 3 - Matchups to ship or animal tracks**  
 Extract satellite data around a set of points defined by longitude, latitude, and time coordinates like that produced by animal telemetry, and ship tracks, or a glider tracts. This function can now handle dataset requests which cross the dateline.
