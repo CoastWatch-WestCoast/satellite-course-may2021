@@ -4,9 +4,20 @@ description: Exercises using R and the rerddapXtracto R package
 
 # R Tutorial
 
-## Exercise book contents
+## About
 
-This document describes R scripts used for demonstrations in the NOAA Satellite Course. The scripts highlight the uses for rerddapXtracto, a R package with functions that allow easy extraction of satellite data from ERDDAP servers. Some of these exercies are also in the rerddapXtracto vignette at [https://cran.r-project.org/web/packages/rerddapXtracto/vignettes/UsingrerddapXtracto.html](https://cran.r-project.org/web/packages/rerddapXtracto/vignettes/UsingrerddapXtracto.html)
+This document describes R scripts used for demonstrations in the NOAA Satellite Course. The scripts highlight the uses for rerddapXtracto, a R package with functions that allow easy extraction of satellite data from ERDDAP servers. Some of these exercises are also in the rerddapXtracto vignette at [https://cran.r-project.org/web/packages/rerddapXtracto/vignettes/UsingrerddapXtracto.html](https://cran.r-project.org/web/packages/rerddapXtracto/vignettes/UsingrerddapXtracto.html)
+
+## **Software requirements**
+
+### **R and R Studio**
+
+The latest version of [R Studio](https://rstudio.com/) is required to participate in the R tutorials and examples presented in the course.
+
+* [R 4.x ](https://www.r-project.org/) is required for the R packages that will be used in the course.
+* [R Script for required modules](https://github.com/CoastWatch-WestCoast/satellite-course-may2021/blob/master/resources/Prerequisites.R): R script to test and/or install required modules for workshop exercises.
+
+## Contents
 
 The source notebook file \(.Rmd\) are available for following along during the course or on your own from our [GitHub repository](https://github.com/CoastWatch-WestCoast/r_code).
 
