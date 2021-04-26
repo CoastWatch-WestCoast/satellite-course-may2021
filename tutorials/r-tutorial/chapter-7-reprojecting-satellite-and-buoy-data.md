@@ -55,9 +55,9 @@ for (pk in list.of.packages) {
 }
 ```
 
-##  Ship Track
+## Ship cruise track
 
-Get a track from the research ship Healy in Alaska. This dataset is in the PolarWatch ERDDAP with dataset id ‘fsuResearchShipNEPP’. Pull the track for a segment of data from June 2011.
+Get a cruise track from the RV Healy in Alaska. This dataset is in the PolarWatch ERDDAP with dataset id ‘fsuResearchShipNEPP’. Pull the track for a segment of data from June 2011.
 
 ```text
 # View variable names to help form the track request
@@ -67,7 +67,7 @@ shipDataInfo <- rerddap::info('fsuResearchShipNEPP')
 ship.df <- tabledap(shipDataInfo, fields = c('latitude',  'longitude', 'time','airTemperature'), 'time>=2011-06-21T00:00:00Z', 'time<=2011-06-29T00:00:00Z')
 ```
 
-**Visualize the ship track**
+#### **Visualize the ship track**
 
 Map the track in the Alaska Albers projection, which is commonly used by scientists working in Alaskan waters. See the Fish and Wildlife reference link for more info on projections in Alaska.
 
@@ -103,7 +103,7 @@ mapLines(longitude = as.numeric(ship.df$longitude),
 
 ![](../../.gitbook/assets/c7a.png)
 
-##  Add Nearby Buoy locations
+##  Add nearby buoy locations
 
 See if any NDBC buoys have data available in this area and add them to the map. Request NDBC buoy data with the **rerddap::tabledap** function, using the same temporal and spatial coverages as our satellite data request. Here we request the station, latitude, longitude, and time and then put the data into a data frame.
 
@@ -191,7 +191,7 @@ mapPoints(longitude = nightbuoy.df$longitude,
 
 ![](../../.gitbook/assets/c7b.png)
 
-##  Add Satellite SST Data
+##  Add satellite SST data
 
 * Request metadata for the Geo-Polar Blended SST dataset using the **rerddap::info** function.
 * Use the returned info about dimensions and variable names to form a data request.
@@ -214,11 +214,11 @@ mapPoints(longitude = nightbuoy.df$longitude,
 ##          Units: 1
 ```
 
-**Extract Satellite SST Data**
+**Extract satellite SST data**
 
 Using information returned from the **rerddap::info** request, form a data request using **rerddapXtracto::rxtracto\_3D**. Here we request SST data for June 24, 2011 using the same extents that we used to define our map.
 
-**Make Map with Ship Track, Buoys and Satellite SST**
+**Make a map with ship track, buoys and satellite SST data**
 
 ```text
 # set plot margins
@@ -274,7 +274,7 @@ mapPoints(longitude = nightbuoy.df$longitude,
 
 ![](../../.gitbook/assets/c7c.png)
 
-##  References
+## References
 
 Dan Kelley, OCE Vignettes - Using Map Projections,Feb 21, 2020, [https://cran.r-project.org/web/packages/oce/vignettes/map\_projections.html](https://cran.r-project.org/web/packages/oce/vignettes/map_projections.html)
 

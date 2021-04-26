@@ -190,7 +190,7 @@ chlMODIS<-rxtracto_3D(dataInfo,parameter=parameter,
 
 ### Now get VIIRS data
 
-First get the dataset metadata with “rerddap::info” by changeing the dataset ID to “nesdisVHNSQchlaMonthly”
+First get the dataset metadata with “rerddap::info” by changing the dataset ID to “nesdisVHNSQchlaMonthly”
 
 Repeat the same commands but change the name of the dataset.
 
@@ -294,7 +294,7 @@ text(as.Date("1997-03-01"),2.2, "VIIRS",col="black", pos=4)
 
 ![](../../.gitbook/assets/ts_4a.png)
 
-##  Now add ESA OCCI Data
+##  Now add ESA OCCI data
 
 If you needed a single timeseries from 1997 to present, you would have to use the plot above to devise some method to reconcile the difference in values where two datasets overlap. Alternatively, you could use the ESA OC-CCI \(ocean color climate change initiative\) dataset, which blends data from many satellite missions into a single dataset. Next we will add the ESA OC-CCI dataset to the plot above to see how it compares with data from the individual satellite missions.
 

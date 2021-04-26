@@ -35,7 +35,7 @@ for (pk in list.of.packages) {
 }
 ```
 
-##  Select the Satellite Data
+##  Select the satellite data
 
 * Use the MUR SST dataset \(ID jplMURSST41mday\). 
 * Gather information about the dataset \(metadata\) using **rerddap.** 
@@ -48,7 +48,7 @@ dataInfo <- rerddap::info('jplMURSST41mday')
 parameter <- 'sst'
 ```
 
-##  Get Satellite Data
+##  Download the satellite data
 
 * Select an area off the coast of California: longitude range of -130 to -115 east and latitude range of 25 to 40 north. 
 * Set the time range to days withing one month: tcoord=c\(‘2018-06-06’,‘2018-06-08’\)\). The values do have to be different.
@@ -75,7 +75,7 @@ plotBBox(SST, plotColor = 'temperature',maxpixels=100000)
 
 ![](../../.gitbook/assets/tw6a.png)
 
-##  Define the Thermal niche of Loggerhead Turtles
+##  Define the thermal niche of loggerhead turtles
 
 **Set the thermal range to 17.5-18.5 degrees C, as determined by the TurtleWatch program.**
 
@@ -106,7 +106,7 @@ SST2.lf$sst<-array(SST2$sst,dims[1]*dims[2])
 
 ```
 
-##  Plot the Data using ‘ggplot’
+##  Plot the data using ‘ggplot’
 
 ```text
 coast <- map_data("worldHires", ylim = ylim, xlim = xlim)

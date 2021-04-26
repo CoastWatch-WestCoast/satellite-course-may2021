@@ -190,7 +190,7 @@ plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'chlorophyll',
 
 This match up was done using weekly \(8-day\) data. Try rerunning the example using the daily \(erdSW2018chla1day\) or the monthly \(erdSW2018chlamday\) satellite data product and see how the results differ
 
-##  Crossing the Dateline
+##  Crossing the dateline
 
 In July 2019 version 0.4.1 of “reddapXtracto”" was updated allowing “rxtracto”" to work on data that crosses the dateline. In this example we will extract chlorophyll data for a grid of stations along the Aleutian Islands.
 
@@ -236,7 +236,7 @@ dataInfo <- rerddap::info(dataset)
 parameter <- 'chlor_a'
 ```
 
-## Look at DataInfo to see if dataset has an altitude dimension.
+## Look at dataInfo to see if dataset has an altitude dimension.
 
 ```text
 dataInfo

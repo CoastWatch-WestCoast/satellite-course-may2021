@@ -13,7 +13,7 @@ The following is a description of the main functions of the “rerddapXtracto”
 ###  rxtracto function
 
 **Summary**  
- Extracts environmental data from an ERDDAP server along a x,y,\[z\], and time trajectory, e.g. an animal or cruise track. The script allows you to control the size if a the box \[cube\] surrounding the x,y \[z\] point to be used to determine means and statistics. You can also control from which ERDDAP you pull data from.
+Extracts environmental data from an ERDDAP server along a x,y,\[z\], and time trajectory, e.g. an animal or cruise track. The script allows you to control the size if a the box \[cube\] surrounding the x,y \[z\] point to be used to determine means and statistics. You can also control from which ERDDAP you pull data from.
 
 **Function**  
  rxtracto &lt;- function\(dataInfo, parameter = NULL, xcoord = NULL, ycoord = NULL, zcoord = NULL, tcoord = NULL, xlen = 0., ylen = 0., zlen = 0., xName = ‘longitude’, yName = ‘latitude’, zName = ‘altitude’, tName = ‘time’, urlbase = ‘[https://coastwatch.pfeg.noaa.gov/erddap](https://coastwatch.pfeg.noaa.gov/erddap)’, verbose = FALSE\)
@@ -83,7 +83,7 @@ plotTrack\(resp, xcoord, ycoord, plotColor = “viridis”, name = NA, myFunc = 
 ###  rxtracto\_3D function
 
 **Summary**  
- Extracts environmental data from an ERDDAP server in an \(x,y,z, time\) bounding box. The same call could be made directly form ERDDAP, but function’s strength is the ability to extract data from polygons.
+Extracts environmental data from an ERDDAP server in an \(x,y,z, time\) bounding box. The same call could be made directly form ERDDAP, but function’s strength is the ability to extract data from polygons.
 
 **Function**  
  extract &lt;- rxtracto\_3D\(dataInfo, parameter = NULL, xcoord = NULL, ycoord = NULL, zcoord = NULL, tcoord = NULL, xName = “longitude”, yName = “latitude”, zName = “altitude”, tName = “time”, urlbase = “[https://upwell.pfeg.noaa.gov/erddap/](https://upwell.pfeg.noaa.gov/erddap/)”, verbose = FALSE\)
