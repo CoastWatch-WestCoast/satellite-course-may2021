@@ -19,6 +19,14 @@ If you want an executable version of a Notebook,  go to the GitHub repository an
   jupyter notebook
   ```
 
+### Software Requirement
+
+[Python 3](https://www.python.org/) is required to participate in the Python tutorials and examples presented in the course.   
+
+[Anaconda](https://docs.anaconda.com/anaconda/install/) installations have made it easier to install the required modules. [Miniconda](https://docs.anaconda.com/anaconda/install/) is a light weight version of Anaconda that takes up less disk space. It comes with a minimal set of modules, so you add just what you need. The following modules are required: pyproj, netCDF4, requests, matplotlib, pandas, cartopy, xarray, statsmodels, shapely, and cmocean. You can run this [script](https://github.com/CoastWatch-WestCoast/python_code/blob/main/check_modules.py) in your python environment to check if the modules are install. 
+
+[Jupyter Notebooks ](https://jupyter.org/install)in addition to Python 3 will be used for Python exercises. 
+
 ### Exercises
 
 1. \*\*\*\*[**Emulating the R rerddapXtracto functions**](https://github.com/CoastWatch-WestCoast/python_code/blob/main/virtual_buoy_example_geopolar.ipynb) This exercise shows you how to duplicate the rerddapXtracto functions demonstrated in R tutorial section of the course.
