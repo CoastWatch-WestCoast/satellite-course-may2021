@@ -6,7 +6,7 @@
     * [Chapter 1 RerddapXtracto](tutorials/r-tutorial/chapter-1-introduction.md)
     * [Chapter 2 Extract data within a boundary](tutorials/r-tutorial/chapter-2-extract-data-within-a-boundary.md)
     * [Chapter 3 Matchups to ship or animal tracks](tutorials/r-tutorial/chapter-3-matchups-to-ship-or-animal-tracks.md)
-    * [Chapter 4 Create and plot timeseries](tutorials/r-tutorial/chapter-4-create-and-plot-timeseries.md)
+    * [Chapter 4 Create and plot time series](tutorials/r-tutorial/chapter-4-create-and-plot-timeseries.md)
     * [Chapter 5 Matchup satellite and buoy data](tutorials/r-tutorial/chapter-5-matchup-satellite-and-buoy-data.md)
     * [Chapter 6 Define a marine habitat](tutorials/r-tutorial/chapter-6-turtlewatch.md)
     * [Chapter 7 Reprojecting gridded and tabular data](tutorials/r-tutorial/chapter-7-reprojecting-satellite-and-buoy-data.md)

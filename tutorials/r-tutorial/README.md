@@ -30,8 +30,8 @@ Visualize data from within the boundaries of the Monterey Bay National Marine Sa
 **Chapter 3 - Matchups to ship or animal tracks**  
 Extract satellite data around a set of points defined by longitude, latitude, and time coordinates like that produced by animal telemetry, and ship tracks, or a glider tracts. This function can now handle dataset requests which cross the dateline.
 
-**Chapter 4 - Create and plot timeseries**  
-Extract time-series for fours different satellite chlorophyll datasets. Plot the results to examine the similarities and differences among the datasets. This exercise is useful for application that require piecing together a long time series from several separate satellite missions.
+**Chapter 4 - Create and plot time series**  
+Extract time series for fours different satellite chlorophyll datasets. Plot the results to examine the similarities and differences among the datasets. This exercise is useful for application that require piecing together a long time series from several separate satellite missions.
 
 **Chapter 5 - Matchup satellite and buoy data**  
 Extract SST buoy data from ERDDAP tabular database and then extract the SST satellite data that is coincident with the buoy data.
