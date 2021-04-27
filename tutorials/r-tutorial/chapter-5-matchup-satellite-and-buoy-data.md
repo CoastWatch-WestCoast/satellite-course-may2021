@@ -1,6 +1,6 @@
 # Chapter 5 Matchup satellite and buoy data
 
-> notebook file \| [06-sstbuoy.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
+> notebook file \| [05-sstbuoy.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
 In this exercise you will extract buoy data from ERDDAP tabular data and then extract satellite data that is coincident with the buoy data.
 
