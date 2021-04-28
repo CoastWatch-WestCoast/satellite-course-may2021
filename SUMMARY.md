@@ -15,7 +15,7 @@
     * [Exploring the data catalog](tutorials/erddap/exploring-the-data-catalog.md)
     * [Visualize and download data](tutorials/erddap/visualize-and-download-data.md)
     * [Automating ERDDAP requests](tutorials/erddap/automating-erddap-requests.md)
-    * [Timeseries and Hovmöller diagrams](tutorials/erddap/timeseries-and-hovmoeller-diagrams.md)
+    * [Timevseries and Hovmöller diagrams](tutorials/erddap/timeseries-and-hovmoeller-diagrams.md)
     * [Mapping Hurricane Jose with winds](tutorials/erddap/mapping-hurricane-jose-with-winds.md)
     * [Tabular Datasets with BGC-Argo data](tutorials/erddap/tabular-datasets-bgc-argo-data.md)
     * [Additional training and resources](tutorials/erddap/additional-training-and-resources.md)

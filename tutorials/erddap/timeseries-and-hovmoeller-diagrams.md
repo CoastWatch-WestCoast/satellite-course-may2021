@@ -2,7 +2,7 @@
 description: A case study following the development of a marine heatwave
 ---
 
-# Timeseries and Hovmöller diagrams
+# Timevseries and Hovmöller diagrams
 
 ## The 2014 marine heatwave
 
@@ -96,7 +96,7 @@ For this demonstration, use the Multi-scale Ultra-high Resolution sea surface te
 
 Now the marine heatwave is clearly visible as an area of up to +3 degrees warmer than the long-term mean! Note how the color bar has changed. By default anomaly datasets have a color bar that differentiates between negative and positive values.
 
-##  Creating a timeseries
+##  Creating a time series
 
 #### How long did the marine heatwave last? 
 
@@ -107,11 +107,11 @@ To find out let’s make a time series of data from a point within the marine he
 
 Pick latitude and longitude coordinates that are within the marine heatwave area. \* Enter `45` as the latitude \* Enter `-143` as the longitude \* Click the `"Redraw the Graph"` button
 
-![ SST anomaly timeseries at 45N, 143W](../../.gitbook/assets/jplmursst41anommday.png)
+![ SST anomaly time series at 45N, 143W](../../.gitbook/assets/jplmursst41anommday.png)
 
-##  Creating a 2D timeseries \(Hovmöller\) plot
+##  Creating a 2D time series \(Hovmöller\) plot
 
-The time series plot shows the progression of the marine heatwave at a single latitude and longitude point. A better way to visualize the marine heatwave is to create a Hovmöller diagram \([https://en.wikipedia.org/wiki/Hovm%C3%B6ller\_diagram](https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram)\), which is a two-dimensional timeseries. For this demonstration, we will plot along a longitude range, from `-179E` to `-125E`, at a latitude of `45N` over time.
+The time series plot shows the progression of the marine heatwave at a single latitude and longitude point. A better way to visualize the marine heatwave is to create a Hovmöller diagram \([https://en.wikipedia.org/wiki/Hovm%C3%B6ller\_diagram](https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram)\), which is a two-dimensional time series. For this demonstration, we will plot along a longitude range, from `-179E` to `-125E`, at a latitude of `45N` over time.
 
 * In the **Graph Type** widget change `lines and markers` back to `surface`
 * In the **Y axis** widget change `latitude` to `time`
