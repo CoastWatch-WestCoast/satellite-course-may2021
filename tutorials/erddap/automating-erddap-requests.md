@@ -177,7 +177,13 @@ Use download.file to download the data, where:
 
 ```text
 # Download the data as a netCDF file
-download.file(url=erddap_url, destfile="myDataFile.nc", quiet=TRUE)
+
+# works for Mac not PC
+# download.file(url=erddap_url, destfile="myDataFile.nc", quiet=TRUE)
+
+# Updated code May 2021
+library(httr) 
+junk <- GET(erddap_url, write_disk("myDataFile.nc", overwrite=TRUE))
 ```
 
 #### **Bring the data into R**
@@ -187,12 +193,16 @@ Open the downloaded data file, load the SST data, and display some information a
 ```text
 # open the netCDF file
 library(ncdf4)
+
+# load data ffrom file
 nc <- ncdf4::nc_open("myDataFile.nc")
+
 # attributes(nc$var)$names
 # load the SST data 
 sst <- ncvar_get(nc, mydata_var)
 # Get the shape of the array
 dim(sst)
+
 ```
 
 ```text
