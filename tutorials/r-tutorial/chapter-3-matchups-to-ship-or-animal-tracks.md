@@ -169,7 +169,7 @@ We will use the “plotTrack” function to plot the results.
 # Uncomment the png line and the dev.off() line to save the image
 # png(file="xyt_matchup.png")
 
-plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'chlorophyll')
+plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'algae')
 
 # Uncomment the png line and the dev.off() line to save the image
 #dev.off()
@@ -182,7 +182,7 @@ plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'chlorophyll')
 To make a cumulative animation of the track:
 
 ```text
-plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'chlorophyll',
+plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'algae',
                     animate = TRUE, cumulative = TRUE)
 ```
 
