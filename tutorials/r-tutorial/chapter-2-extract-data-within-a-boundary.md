@@ -139,7 +139,7 @@ str(sanctchl)
 
 The extracted data contains two time periods of chlorophyll data within the sanctuary boundaries.
 
-## Select one time period
+## Select a time period
 
 ### Choose Time to Plot
 
