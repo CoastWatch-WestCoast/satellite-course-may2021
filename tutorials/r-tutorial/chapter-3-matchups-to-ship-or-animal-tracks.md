@@ -169,7 +169,7 @@ We will use the “plotTrack” function to plot the results.
 # Uncomment the png line and the dev.off() line to save the image
 # png(file="xyt_matchup.png")
 
-plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'algae')
+plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'chlorophyll')
 
 # Uncomment the png line and the dev.off() line to save the image
 #dev.off()
@@ -182,7 +182,7 @@ plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'algae')
 To make a cumulative animation of the track:
 
 ```text
-plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'algae',
+plotTrack(swchl, xcoord, ycoord, tcoord, plotColor = 'chlorophyll',
                     animate = TRUE, cumulative = TRUE)
 ```
 
@@ -231,11 +231,9 @@ tcoord <- rep('2019-04-15',length(xcoord))
 * Selects the dataset and parameter for the extraction. In this example the dataset chosen is the monthly NOAA VIIRS chlorophyll data
 
 ```text
-url <- "https://coastwatch.pfeg.noaa.gov/erddap/"
-dataset <- 'pmlEsaCCI50OceanColorMonthly'
-dataInfo <- rerddap::info(dataset,url=url)
+dataset <- 'nesdisVHNSQchlaMonthly'
+dataInfo <- rerddap::info(dataset)
 parameter <- 'chlor_a'
-
 ```
 
 ## Look at dataInfo to see if dataset has an altitude dimension.
@@ -244,22 +242,31 @@ parameter <- 'chlor_a'
 dataInfo
 ```
 
-#### 
+```text
+##  nesdisVHNSQchlaMonthly 
+##  Base URL: https://upwell.pfeg.noaa.gov/erddap/ 
+##  Dimensions (range):  
+##      time: (2012-01-02T12:00:00Z, 2020-02-01T12:00:00Z) 
+##      altitude: (0.0, 0.0) 
+##      latitude: (-89.75626, 89.75625) 
+##      longitude: (-179.9812, 179.9813) 
+##  Variables:  
+##      chlor_a: 
+##          Units: mg m^-3
+```
 
-This dataset does not have an altitude dimension, so we do not need to supply an altitude parameter in the following "rxtracto" call.
+#### Since this dataset has an altitude dimension, we need to supply an altitude parameter in the “rxtracto” call
 
-Note that in both rxtracto\(\) and rxtracto\_3D\(\) the zcoord can be a range.
-
-* For rxtracto\_3D\(\) if the zCoord needs to be given, it must be of length two. 
-* For rxtracto\(\) if the zCoord needs to be given, it must be of the same length as the other coordinates, and can also have a “zlen”“, like ”xlen" and “ylen”, that defines a bounding box within which to make the extract. 
-* The advantage of this is it allows rxtracto\(\) to make extracts moving in \(x, y, z, t\) space.
+```text
+zcoord <- 0.*xcoord
+```
 
 #### Now we will make the call to match up satellite data with station locations.
 
 ```text
 chl <- rxtracto(dataInfo, 
                   parameter=parameter, 
-                  xcoord=xcoord, ycoord=ycoord, 
+                  xcoord=xcoord, ycoord=ycoord, zcoord=zcoord,
                   tcoord=tcoord, xlen=xlen, ylen=ylen)
 ```
 
@@ -306,12 +313,10 @@ points(xcoord,ycoord, pch=1, cex=.9)
 * Add the colorbar
 
 ```text
-dev.off()
 par(mar=c(4,.5,5,3))
 chlv <- min(chl$'mean chlor_a'[gooddata])+(0:9)*(max(chl$'mean chlor_a'[gooddata])-min(chl$'mean chlor_a'[gooddata]))/10
 image(y=chlv,z=t(1:9), col=cols, axes=FALSE, main="Chl", cex.main=.8)
 axis(4,mgp=c(0,.5,0),las=1)
-
 ```
 
 ![](../../.gitbook/assets/r.3.10.png)
