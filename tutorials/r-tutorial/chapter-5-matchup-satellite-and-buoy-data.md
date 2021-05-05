@@ -1,6 +1,6 @@
 # Chapter 5 Matchup satellite and buoy data
 
-> notebook file \| [06-sstbuoy.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
+> notebook file \| [05-sstbuoy.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
 In this exercise you will extract buoy data from ERDDAP tabular data and then extract satellite data that is coincident with the buoy data.
 
@@ -36,9 +36,10 @@ pkgTest <- function(x)
   }
 }
 
-list.of.packages <- c( "ncdf4", "rerddap","plotdap","rerddapXtracto","httr",
+list.of.packages <- c( "ncdf4", "rerddap", "plotdap", "httr",
                        "lubridate", "gridGraphics",  "mapdata",
-                       "ggplot2", "RColorBrewer", "grid", "PBSmapping")
+                       "ggplot2", "RColorBrewer", "grid", "rerddapXtracto", 
+                       "PBSmapping")
 
 # create list of installed packages
 pkges = installed.packages()[,"Package"]
@@ -180,6 +181,11 @@ p + geom_point() +
 ![](../../.gitbook/assets/buoy5a.png)
 
 Run a linear regression of VIIRS satellite verses the buoy data. \* The R squared in close to 1 \(0.9807\) \* The slope is near 1 \(0.950711\)
+
+```text
+lmHeight = lm(viirs~sst, data = goodbuoy)
+summary(lmHeight)
+```
 
 ```text
 ## 

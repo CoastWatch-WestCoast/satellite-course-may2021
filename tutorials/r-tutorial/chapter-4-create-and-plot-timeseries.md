@@ -1,8 +1,8 @@
-# Chapter 4 Create and plot timeseries
+# Chapter 4 Create and plot time series
 
-> notebook file \| [05-timeseries\_chl.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
+> notebook file \| [04-timeseries\_chl.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
-This example extracts a time-series of monthly satellite chlorophyll data for the period of 1997-present from four different monthly satellite datasets:
+This example extracts a time series of monthly satellite chlorophyll data for the period of 1997-present from four different monthly satellite datasets:
 
 * SeaWiFS, 1997-2012 \(ID = erdSWchlamday\)
 * MODIS, 2002-present \(ID = erdMH1chlamday\)
@@ -33,9 +33,10 @@ pkgTest <- function(x)
 }
 
 # create list of required packages
-list.of.packages <- c( "rerddap","plotdap","rerddapXtracto", "lubridate", "maps",
+list.of.packages <- c( "rerddap","plotdap", "lubridate", "maps",
                        "mapdata", "maptools", "mapproj", "ncdf4",
-                       "reshape2", "colorRamps", "sp", "plyr", "ggplot2", "gridExtra")
+                       "reshape2", "colorRamps", "sp", "plyr", "ggplot2", 
+                       "gridExtra","rerddapXtracto")
 
 # create list of installed packages
 pkges = installed.packages()[,"Package"]
@@ -71,11 +72,11 @@ ttext<-paste(paste(abs(xcoord), collapse="-"),"W, ", paste(ycoord, collapse="-")
 
 ## Extract satellite data with rxtracto\_3D
 
-For each dataset, you will extract satellite data for the entire length of the available timeseries.
+For each dataset, you will extract satellite data for the entire length of the available time series.
 
-* Dates must be defined separately for each dataset. **rxtracto\_3D** will crash if dates are entered that are not part of the timeseries. 
-* The beginning \(earliest\) date to use in timeseries is obtained from the information returned in dataInfo. 
-* To get the ending \(most recent\) date to use in the timeseries, you will use the `last` option for time.
+* Dates must be defined separately for each dataset. **rxtracto\_3D** will crash if dates are entered that are not part of the time series. 
+* The beginning \(earliest\) date to use in time series is obtained from the information returned in dataInfo. 
+* To get the ending \(most recent\) date to use in the time series, you will use the `last` option for time.
 
 ### Get the SeaWiFS data
 
@@ -129,7 +130,7 @@ tt <- global[ global$attribute_name %in% c('time_coverage_end','time_coverage_st
 # Use the "last" option for the ending date
 tcoord <- c(tt[2],"last")
 
-# Extract the timeseries data using rxtracto_3D
+# Extract the time series data using rxtracto_3D
 chlSeaWiFS<-rxtracto_3D(dataInfo,parameter=parameter,
                         tcoord=tcoord,
                         xcoord=xcoord,ycoord=ycoord,zcoord=zcoord)
@@ -246,12 +247,12 @@ chlVIIRS$chlor_a <- drop(chlVIIRS$chlor_a)
 #chlVIIRS$chla <- drop(chlVIIRS$chla)
 ```
 
-## Create timeseries of mean monthly data
+## Create time series of mean monthly data
 
 **The script below:**
 
 * For each dataset, spatially averages data for each time step within the area boundaries.
-* For each dataset, temporally averages data for data in each timeseries onto one map
+* For each dataset, temporally averages data for data in each time series onto one map
 
 ```text
 ## Spatially average all the data within the box for each dataset.
@@ -271,7 +272,7 @@ chlVIIRS$avgmap <- apply(chlVIIRS$chlor_a,c(1,2),function(x) mean(x,na.rm=TRUE))
 
 ##  Plot time series
 
-* Displays a timeseries plot of all three datasets
+* Displays a time series plot of all three datasets
 
 ```text
 ## To print out a file uncomment the png command and the dev.off command
@@ -296,7 +297,7 @@ text(as.Date("1997-03-01"),2.2, "VIIRS",col="black", pos=4)
 
 ##  Now add ESA OCCI data
 
-If you needed a single timeseries from 1997 to present, you would have to use the plot above to devise some method to reconcile the difference in values where two datasets overlap. Alternatively, you could use the ESA OC-CCI \(ocean color climate change initiative\) dataset, which blends data from many satellite missions into a single dataset. Next we will add the ESA OC-CCI dataset to the plot above to see how it compares with data from the individual satellite missions.
+If you needed a single time series from 1997 to present, you would have to use the plot above to devise some method to reconcile the difference in values where two datasets overlap. Alternatively, you could use the ESA OC-CCI \(ocean color climate change initiative\) dataset, which blends data from many satellite missions into a single dataset. Next we will add the ESA OC-CCI dataset to the plot above to see how it compares with data from the individual satellite missions.
 
 * Change the dataset ID to “pmlEsaCCI31OceanColorMonthly” in the rerddap::info function. 
 * There are over 60 variables in this dataset, so the dataInfo is not displayed \(feel free to examine the dataInfo variable on your own\). 
@@ -323,7 +324,7 @@ chlOCCCI<-rxtracto_3D(dataInfo,parameter=parameter,
                       tcoord=tcoord,
                       xcoord=xcoord,ycoord=ycoord)
 
-# Now spatially average the data into a timeseries
+# Now spatially average the data into a time series
 chlOCCCI$avg <- apply(chlOCCCI$chlor_a, c(3),function(x) mean(x,na.rm=TRUE))
 
 # Now temporally average the data into one map 

@@ -1,6 +1,6 @@
 # Chapter 6 Define a marine habitat
 
-> notebook file \| [07\_turtlewatch\_xtracto.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
+> notebook file \| [06\_turtlewatch\_xtracto.Rmd](https://github.com/CoastWatch-WestCoast/r_code)
 
 The TurleWatch project investigated the thermal habitat of loggerhead sea turtles in the Pacific Ocean north of the Hawaiian Islands. Research results indicate that most loggerhead turtles stay in water between 17.5°C and 18.5°C. When the 17.5°C to 18.5°C temperature contour is drawn on a map of sea surface temperature conditions, it delineates the boundary of the loggerhead's preferred habitat.  
 
@@ -23,9 +23,9 @@ pkgTest <- function(x)
   }
 }
 
-list.of.packages <- c( "ncdf4", "rerddap","plotdap","rerddapXtracto","RCurl",  
+list.of.packages <- c( "ncdf4", "rerddap", "plotdap", "RCurl",  
                        "raster", "colorRamps", "maps", "mapdata",
-                       "ggplot2", "RColorBrewer")
+                       "ggplot2", "RColorBrewer,"rerddapXtracto"")
 
 # create list of installed packages
 pkges = installed.packages()[,"Package"]
@@ -70,7 +70,7 @@ SST$sst <- drop(SST$sst)
 ##  Make a quick plot using plotBBox
 
 ```text
-plotBBox(SST, plotColor = 'temperature',maxpixels=100000)
+plotBBox(SST, plotColor = 'thermal',maxpixels=100000)
 ```
 
 ![](../../.gitbook/assets/tw6a.png)
@@ -90,7 +90,7 @@ max.temp <- 18.5
 ```text
 SST2 <- SST
 SST2$sst[SST2$sst >= min.temp & SST2$sst <= max.temp] <- NA
-plotBBox(SST2, plotColor = 'temperature',maxpixels=100000)
+plotBBox(SST2, plotColor = 'thermal',maxpixels=100000)
 ```
 
 ![](../../.gitbook/assets/tw6b.png)

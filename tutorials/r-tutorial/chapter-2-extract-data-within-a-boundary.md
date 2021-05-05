@@ -29,9 +29,9 @@ pkgTest <- function(x)
 }
 
 # create list of required packages
-list.of.packages <- c("ncdf4", "rerddap","plotdap","rerddapXtracto", "parsedate", 
+list.of.packages <- c("ncdf4", "rerddap","plotdap", "parsedate", 
                       "sp", "ggplot2", "RColorBrewer", 
-                      "reshape2", "maps", "mapdata", "jsonlite")
+                      "reshape2", "maps", "mapdata", "jsonlite","rerddapXtracto")
 
 # Run install and load function
 for (pk in list.of.packages) {
@@ -139,19 +139,30 @@ str(sanctchl)
 
 The extracted data contains two time periods of chlorophyll data within the sanctuary boundaries.
 
-##  Select just one time period, the second one.
+## Select a time period
+
+### Choose Time to Plot
+
+The extracted data contains two time periods of chlorophyll data within the sanctuary boundaries. For this example we will show how to select just one time period from the options and map it, here we choose the second time stamp.
+
+```text
+
+sanctchl1 <- sanctchl
+sanctchl1$chla <- sanctchl1$chla[, , 2]
+sanctchl1$time <- sanctchl1$time[2]
+```
 
 ###  Plot the data
 
 * Use the plotBBox function in rerddapXtracto to quickly plot the data
 
 ```text
-plotBBox(sanctchl1, plotColor = 'chlorophyll',maxpixels=100000)
+plotBBox(sanctchl1, plotColor = 'algae', maxpixels=100000)
 ```
 
 ![](../../.gitbook/assets/r_2.5.2.png)
 
-###  Apply a function to the data
+### Apply a function to the data
 
 Chlorophyll data is often plotted as log. We can apply a function to the plotting routine to convert the chlorophyll values to log. 
 
