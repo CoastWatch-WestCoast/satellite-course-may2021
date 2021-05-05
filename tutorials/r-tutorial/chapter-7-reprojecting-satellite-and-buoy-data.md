@@ -198,6 +198,12 @@ mapPoints(longitude = nightbuoy.df$longitude,
 * The satellite dataset id is **nesdisGeoPolarSSTN5NRT**
 
 ```text
+# Request and view info about satellite dataset
+satdataInfo <- rerddap::info('nesdisGeoPolarSSTN5SQNRT')
+satdataInfo
+```
+
+```text
 ##  nesdisGeoPolarSSTN5SQNRT 
 ##  Base URL: https://upwell.pfeg.noaa.gov/erddap/ 
 ##  Dimensions (range):  
