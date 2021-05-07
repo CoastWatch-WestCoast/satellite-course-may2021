@@ -29,7 +29,7 @@ If you want an executable version of a Notebook,  go to the GitHub repository an
 
 ### Exercises
 
-1. \*\*\*\*[**Emulating the R rerddapXtracto functions**](https://github.com/CoastWatch-WestCoast/python_code/blob/main/virtual_buoy_example_geopolar.ipynb) This exercise shows you how to duplicate the rerddapXtracto functions demonstrated in R tutorial section of the course.
+1. \*\*\*\*[**Emulating the R rerddapXtracto functions**](https://github.com/CoastWatch-WestCoast/python_code/blob/main/py_xtractomatic.ipynb) This exercise shows you how to duplicate the rerddapXtracto functions demonstrated in R tutorial section of the course.
    * Extract environmental data from an ERDDAP server along an x,y and time trajectory, e.g. an animal or cruise track.
    * Extract environmental data from an ERDDAP server in an rectangular bounding box \(polygon\) over time.
    * Extract environmental data from an ERDDAP server in an irregular bounding box \(polygon\) over time, e.g. a marine protected area.
