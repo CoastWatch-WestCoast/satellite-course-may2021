@@ -196,10 +196,11 @@ mapPoints(longitude = nightbuoy.df$longitude,
 * Request metadata for the Geo-Polar Blended SST dataset using the **rerddap::info** function.
 * Use the returned info about dimensions and variable names to form a data request.
 * The satellite dataset id is **nesdisGeoPolarSSTN5NRT**
+* This dataset is located on the ERDDAP server at https://coastwatch.pfeg.noaa.gov/erddap/, so the url attribute in the rerddap::info function needs to be changed to url = 'https://coastwatch.pfeg.noaa.gov/erddap/' 
 
 ```text
 # Request and view info about satellite dataset
-satdataInfo <- rerddap::info('nesdisGeoPolarSSTN5SQNRT', url = "https://coastwatch.pfeg.noaa.gov/erddap/")
+satdataInfo <- rerddap::info('nesdisGeoPolarSSTN5SQNRT', url = 'https://coastwatch.pfeg.noaa.gov/erddap/')
 satdataInfo
 ```
 
