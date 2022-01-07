@@ -199,13 +199,13 @@ mapPoints(longitude = nightbuoy.df$longitude,
 
 ```text
 # Request and view info about satellite dataset
-satdataInfo <- rerddap::info('nesdisGeoPolarSSTN5SQNRT')
+satdataInfo <- rerddap::info('nesdisGeoPolarSSTN5SQNRT', url = "https://coastwatch.pfeg.noaa.gov/erddap/")
 satdataInfo
 ```
 
 ```text
 ##  nesdisGeoPolarSSTN5SQNRT 
-##  Base URL: https://upwell.pfeg.noaa.gov/erddap/ 
+##  Base URL: https://coastwatch.pfeg.noaa.gov/erddap/ 
 ##  Dimensions (range):  
 ##      time: (2002-09-01T12:00:00Z, 2020-04-03T12:00:00Z) 
 ##      latitude: (-89.975, 89.975) 
